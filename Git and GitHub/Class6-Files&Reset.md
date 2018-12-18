@@ -3,7 +3,7 @@ Sometimes we just have typos on the text that we make at the time we commit.
 For example, we can have typo ndex in our last commit instead of saying index
 So for redoing the message for commit on our last commit, we do the following command:
 ```bash
-$ git commit --ammend -m "message for the last commit"
+$ git commit --amend -m "message for the last commit"
 ```
 Adding --ammend to the commit command let us change the last commit.
 
