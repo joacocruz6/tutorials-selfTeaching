@@ -14,7 +14,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   4. Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   5. Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
   6. Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
-  7. Node.js: https://www.youtube.com/playlist?list=PLvq-jIkSeTUY3gY-ptuqkNEXZHsNwlkND
+  7. Node.js: https://www.youtube.com/playlist?list=PLvimn1Ins-41lVr-SPWF1mdNTzog05TcA
   8. React.js: https://www.youtube.com/playlist?list=PLeWI3XlFEVOX6jACDygzApsvigQiDrun8
   9. Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
   10. Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
