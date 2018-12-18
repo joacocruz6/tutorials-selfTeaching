@@ -1,9 +1,12 @@
 # Self Learning Archives
 Here will be my notes for my self learning processes. They will be all made by markdown archives and they are parts from free videos on youtube.
+
 I already know languages, the more I am used to are Java (main one), Python, C, PHP, HTML, SQL.
 But I know the basics of JavaScript,C++ and Git and GitHub.
+
 First I wanna do its get more knowledge of versioning.
 Then are courses of getting the hang of the languages that I am not very good at (JS and C++) and then I will start doing new languages and frameworks. The C++ will be just POO and the first classes (stdin and stdout of data).
+
 The playlist of the videos will be pointed here and if someone will read my notes, they will be on english with code inside.
 (There will be a ticket when I complete the course and the notes are available)
 
@@ -11,7 +14,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [ ] ECMA 6 (JavaScript): https://www.youtube.com/playlist?list=PLIddmSRJEJ0tYYrHQAAeTAmXzj36jxXoF
   - [ ] JavaScript2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
-	- [ ] JavaScript3: https://www.youtube.com/playlist?list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o 
+	- [ ] JavaScript3: https://www.youtube.com/playlist?list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o
   - [ ] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
