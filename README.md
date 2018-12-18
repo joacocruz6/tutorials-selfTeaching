@@ -9,17 +9,20 @@ The playlist of the videos will be pointed here and if someone will read my note
 
   0. Git and GitHub: https://www.youtube.com/playlist?list=PLvimn1Ins-43-1sXQmGZPWLjNjPyGNi0R
   1. C++: https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
-  2. JavaScript: https://www.youtube.com/playlist?list=PLr6-GrHUlVf96NLj3PQq-tmEB6woZjwEl
+  2. ECMA 6 (JavaScript): https://www.youtube.com/playlist?list=PLIddmSRJEJ0tYYrHQAAeTAmXzj36jxXoF
   3. JavaScript2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
-  4. ECMA 6 (JS 3): https://www.youtube.com/playlist?list=PLIddmSRJEJ0tYYrHQAAeTAmXzj36jxXoF
+  4. Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   5. Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   6. Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
   7. Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
   8. Node.js: https://www.youtube.com/playlist?list=PLvimn1Ins-41lVr-SPWF1mdNTzog05TcA
   9. React.js: https://www.youtube.com/playlist?list=PLeWI3XlFEVOX6jACDygzApsvigQiDrun8
-  10. Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
+  10. Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   11. Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
   12. Angular: https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
+  13. Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
+  14. Vue.js: TODO
+  15. jQuery: TODO
 
 
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.

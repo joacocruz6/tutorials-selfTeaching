@@ -7,7 +7,7 @@ The mayor pro is that give us a much easier work when we are in a team.
 ## Cons
 
 1. The learning curve is difficult.
-2. Some archives are very difficult to handle
+2. Some files are very difficult to handle
 
 ## Some clarifications
 1. Git != GitHub, Git is the system but GitHub (or Bitbucket or GitLab) are a social network for sharing our proyects.
