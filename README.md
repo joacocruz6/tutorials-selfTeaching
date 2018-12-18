@@ -8,7 +8,7 @@ The playlist of the videos will be pointed here and if someone will read my note
 (There will be a ticket when I complete the course and the notes are available)
 
   - [x] Git and GitHub: https://www.youtube.com/playlist?list=PLvimn1Ins-43-1sXQmGZPWLjNjPyGNi0R
-  - [ ] C++: https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
+  - [ ] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [ ] ECMA 6 (JavaScript): https://www.youtube.com/playlist?list=PLIddmSRJEJ0tYYrHQAAeTAmXzj36jxXoF
   - [ ] JavaScript2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [ ] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
