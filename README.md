@@ -12,9 +12,9 @@ The playlist of the videos will be pointed here and if someone will read my note
 
   - [x] Git and GitHub: https://www.youtube.com/playlist?list=PLvimn1Ins-43-1sXQmGZPWLjNjPyGNi0R
   - [ ] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
-  - [ ] ECMA 6 (JavaScript): https://www.youtube.com/playlist?list=PLIddmSRJEJ0tYYrHQAAeTAmXzj36jxXoF
-  - [ ] JavaScript2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
-	- [ ] JavaScript3: https://www.youtube.com/playlist?list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o
+  - [ ] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
+  - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
+  - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - [ ] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
@@ -25,8 +25,9 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
   - [ ] Angular: https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
   - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
+  - [ ] HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
+  - [ ] HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
   - [ ] Vue.js: TODO
-  - [ ] jQuery: TODO
 
-
+A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
