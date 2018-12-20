@@ -11,7 +11,7 @@ The playlist of the videos will be pointed here and if someone will read my note
 (There will be a ticket when I complete the course and the notes are available)
 
   - [x] Git and GitHub: https://www.youtube.com/playlist?list=PLvimn1Ins-43-1sXQmGZPWLjNjPyGNi0R
-  - [ ] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
+  - [x] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [ ] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
