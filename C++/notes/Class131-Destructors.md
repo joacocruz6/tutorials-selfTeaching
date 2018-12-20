@@ -12,7 +12,7 @@ class Dog{
     void play();
 };
 ```
-So now we defined the destructor ass the method:
+So now we defined the destructor as the method:
 ```C++
 ~ClassName()
 ```
