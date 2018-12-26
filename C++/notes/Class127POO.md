@@ -78,3 +78,31 @@ int main(){
 }
 ```
 And that it!
+# Summary
+To create classes in C++ we use the class keyword and define the privates arguments and the public ones using the keywords of the same name.
+For example:
+```C++
+class nameOfClass{
+  private:
+    //put private fields here
+  public:
+    //public fields go here
+};
+```
+Then to define a method in the class, we put the name and return on the public field, and then outside the class we define it's body:
+```C++
+class nameOfClass{
+  private:
+    ...
+  public:
+    nameOfClass(/*type of it's parameters*/); /*The constructor has the name of the class*/
+    typeofreturn method1(/*type of it's parameters*/);
+    ...
+};
+nameOfClass::nameOfClass(/*parameters*/){
+  //constructor
+}
+typeofreturn nameOfClass::method1(/*parameters*/){
+  //body of the method
+}
+```

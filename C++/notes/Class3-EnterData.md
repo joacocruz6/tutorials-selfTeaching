@@ -16,3 +16,6 @@ int main(){
 And there you go.
 
 Notice that another << is included because we can't add strings to ints, the cout command let us put additional << to add to the message some variables.
+
+# Summary
+The brother function to console out is console in, and to receive data and store it in a variable we need to declare it before the cin instruction.

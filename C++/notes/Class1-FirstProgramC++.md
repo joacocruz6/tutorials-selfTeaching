@@ -27,3 +27,12 @@ cout<<"Hello World!"<<endl;
 So that's it!
 
 Our program will do Hello World !.
+
+# Summary
+The default library of C++ to in and out is iostream.
+
+Then the function to get data in the default C++ out is cout.
+
+We use the 'using namespace std;' instruction to get rid of typing std:: every time we need to print something out.
+
+Finally, C++ have a main function that will be executed when we run our programs.
