@@ -46,3 +46,5 @@ Date::Date(long aDate){
 }
 ```
 And depends of the variable passed we can do the constructor we like.
+## Summary
+In C++ like in Java you can have multiple constructors for the same object. To do so, you have to define the same fields of information but the constructors must have a different sign for theirs.

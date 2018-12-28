@@ -64,3 +64,16 @@ And that's it!
 Delete are a generic destructor of objects, this means, its deallocate the memory space of a pointer pointing towards an object. It calls it's destructor!.
 Also you can delete an entire array of objects by doing delete[] arrayName;
 ## Summary
+By supporting heritage, C++ supports Polyformism and overriding of objects methods.
+
+To explicit to C++ like, this will be a method capable of override, we put the keyword:
+```C++
+virtual
+```
+In it's declaration of the superclass.
+
+Then to override it, we put it on the declaration of the subclass and then we put the subclass name of it's declaration.
+
+Also, C++ manage pointers to objects like we had pointers to structs in C. To create a new pointer to an object we put the word new and then call a constructor. new keyword is like the malloc in C, so we have to explicit when that pointer is going to liberate it's resources. To liberate that pointer to an object, we use delete keyword to it.
+
+If we have an array of pointers we use delete[].

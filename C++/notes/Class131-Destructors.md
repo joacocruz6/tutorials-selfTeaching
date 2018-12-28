@@ -45,3 +45,30 @@ int main(){
 }
 ```
 ## Summary
+The destructors in C++ are methods that free space ocuppied by an object in memory. To do name it we do:
+```C++
+class MyObject {
+  ...
+  public:
+    ...
+    ~MyObject(); //the destructor of the object
+    ...
+};
+...
+MyObject::~MyObject(){
+
+}
+```
+Now if we want to use, we simply call it on main or other function:
+```C++
+int main(){
+  ...
+  MyObject o=MyObject(...);
+  ...
+  o.~MyObject(); //destroying the object
+  ...
+}
+```
+Then o is a dangling reference to an object.
+
+If we don't explicit the destructor C++ will put a standard one for us.
