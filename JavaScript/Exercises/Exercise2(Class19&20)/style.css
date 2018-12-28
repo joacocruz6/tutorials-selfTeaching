@@ -56,4 +56,30 @@ opacity: 0.5;
   padding: 0 5px;
   background-color: #1b1b1b;
   z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+.nav-sidebar ul{
+  padding-top: 15px;
+  overflow: hidden;
+  visibility: hidden;
+}
+.nav-sidebar ul li{
+  line-height: 15px;
+  list-style: none;
+}
+.nav-sidebar ul li span, .nav-sidebar ul li a{
+  display: block;
+  height: 60px;
+  padding: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: arial;
+  font-size: 16px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.nav-sidebar ul li a:hover{
+  background-color: #222;
 }
