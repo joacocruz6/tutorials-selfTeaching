@@ -12,6 +12,8 @@ The playlist of the videos will be pointed here and if someone will read my note
 
   - [x] Git and GitHub: https://www.youtube.com/playlist?list=PLvimn1Ins-43-1sXQmGZPWLjNjPyGNi0R
   - [x] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
+  - [ ] HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
+  - [ ] HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
   - [ ] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
@@ -25,8 +27,6 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
   - [ ] Angular: https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
   - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
-  - [ ] HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
-  - [ ] HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
   - [ ] Vue.js: TODO
   - [ ] Elixir: TODO
   - [ ] Flutter: TODO
