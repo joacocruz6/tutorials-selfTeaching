@@ -42,7 +42,7 @@ let person = {
 ```
 This is the same object of the first method.
 
-This
+This will be short in the constructors.
 
 ## Some objects predefined in JavaScript
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
