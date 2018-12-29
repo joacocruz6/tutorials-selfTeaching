@@ -7,6 +7,9 @@
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="js/gamemanager.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
   </head>
   <body>
     <div class="header">
@@ -14,28 +17,28 @@
       <h2>Choose your character!</h2>
     </div>
     <div class="interface">
-      <a href="#" onclick="">
+      <a href="#" onclick="GameManager.setGameStart('Warrior')">
         <img src="img/player/warrior.jpeg" alt="warrior">
         <div>
           <h3>Warrior</h3>
           <p>Warriors have higher health and stamina, however their strength also makes them slower and clumsier.</p>
         </div>
       </a>
-      <a href="#" onclick="">
+      <a href="#" onclick="GameManager.setGameStart('Rogue')">
         <img src="img/player/rogue.jpeg" alt="rogue">
         <div>
           <h3>Rogue</h3>
           <p>Rogues are fast and have high stamina and speed which makes up for their lack in strength and health.</p>
         </div>
       </a>
-      <a href="#" onclick="">
+      <a href="#" onclick="GameManager.setGameStart('Mage')">
         <img src="img/player/mage.jpeg" alt="mage">
         <div>
           <h3>Mage</h3>
           <p>Mages are glass canons which puts all their effort into spells. This means the slack of everything else.</p>
         </div>
       </a>
-      <a href="#" onclick="">
+      <a href="#" onclick="GameManager.setGameStart('Hunter')">
         <img src="img/player/hunter.jpeg" alt="hunter">
         <div>
           <h3>Hunter</h3>
@@ -47,6 +50,9 @@
 
     </div>
     <div class="arena">
+
+    </div>
+    <div class="enemy">
 
     </div>
   </body>
