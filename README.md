@@ -14,13 +14,13 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [ ] HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
   - [ ] HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
-  - [ ] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
+  - [x] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - [ ] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
   - [ ] Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
+  - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - [ ] Node.js: https://www.youtube.com/playlist?list=PLvimn1Ins-41lVr-SPWF1mdNTzog05TcA
   - [ ] React.js: https://www.youtube.com/playlist?list=PLeWI3XlFEVOX6jACDygzApsvigQiDrun8
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
