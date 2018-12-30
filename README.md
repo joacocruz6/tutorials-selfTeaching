@@ -27,7 +27,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
   - [ ] HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
   - [ ] HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
-  - [ ] Vue.js: TODO
+  - [ ] Vue.js: https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa
   - [ ] Elixir: TODO
   - [ ] Flutter: TODO
   - [ ] Scala: TODO
