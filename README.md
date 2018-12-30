@@ -32,5 +32,6 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Flutter: TODO
   - [ ] Scala: TODO
   - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
+  
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
