@@ -14,7 +14,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [x] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
+  - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
   - [ ] Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
@@ -32,6 +32,6 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Flutter: TODO
   - [ ] Scala: TODO
   - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
-  
+
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
