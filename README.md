@@ -19,8 +19,8 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
   - [ ] Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
   - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
-  - [ ] Node.js: https://www.youtube.com/playlist?list=PLvimn1Ins-41lVr-SPWF1mdNTzog05TcA
-  - [ ] React.js: https://www.youtube.com/playlist?list=PLeWI3XlFEVOX6jACDygzApsvigQiDrun8
+  - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+  - [ ] React.js & Redux: https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
   - [ ] Angular: https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
@@ -31,6 +31,6 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Elixir: TODO
   - [ ] Flutter: TODO
   - [ ] Scala: TODO
-
+  - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
