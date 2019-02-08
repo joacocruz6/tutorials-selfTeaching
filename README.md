@@ -14,7 +14,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] C++ (POO): https://www.youtube.com/playlist?list=PLWtYZ2ejMVJlUu1rEHLC0i_oibctkl0Vh
   - [x] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
-  - [ ] Ruby: https://www.youtube.com/playlist?list=PLEFC2D43C36013A70
+  - [ ] Ruby: https://www.youtube.com/playlist?list=PLMK2xMz5H5Zv8eC8b4K6tMaE1-Z9FgSOp
   - [ ] Ruby on Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
   - [ ] Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
