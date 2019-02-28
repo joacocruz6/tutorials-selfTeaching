@@ -25,4 +25,15 @@ For example:
 my_cat = "Cute"
 print my_cat
 ```
-And the string Cute will be printed, because it is on the variable my_cat
+And the string Cute will be printed, because it is on the variable my_cat.
+
+###### Executing ruby on bash
+First of all install ruby on your bash, to verify installation we do:
+```bash
+$ ruby -ver
+```
+To see the ruby version of it.
+Then we type:
+```bash
+$ ruby fileToExecute.rb
+```
