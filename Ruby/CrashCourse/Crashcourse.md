@@ -1,6 +1,6 @@
 
 Crash course link: https://www.youtube.com/watch?v=t_ispmWmdjY
-I'm on minute:
+I'm on minute: 1:59:13
 # Introduction
 So Ruby will be similar to python, so to do it more quickly i will see an crash course.
 
@@ -141,4 +141,159 @@ puts "Hello #{name}"
 And chomp will get rid of the newline character of the enter. Also, it's important that gets.chomp will always get us a string. We need to convert to the type of input.
 So to convert variable type there is the to_t where t is the type to be converted.
 
-##
+## Arrays
+So to use arrays in ruby, we initialize it like this:
+```Ruby
+friends = Array["Pancho","Bau","Martin"]
+puts friends
+```
+or like this
+```Ruby
+friends = ["Pancho","Bau","Martin"]
+puts friends[0]
+```
+To do slices we do:
+```Ruby
+puts friends[0,2]
+```
+To initialize the array empty:
+```Ruby
+friends = Array.new
+friends[0] = "Pancho"
+friends[1] = "Bau"
+friends[2] = "Martin"
+```
+But we can do a non linear information array, like having the 0 and 5th element of it but
+
+##### Some methods
+Some methods that the arrays have are:
+- length(): Give us the length of the array
+- include? aData : True if aData is in the array
+- reverse(): Revert the array elements
+- sort(): Sort the order of the array of elements of the same data type.
+
+## Hashes
+
+So we can use Hash like dictionaries on Python, this are key values pair of information.
+
+For example, Hash of some state of the US:
+```Ruby
+states = {
+  "Pennsylvania" => "PA",
+  "New York" => "NY",
+  "California" => "CA"
+}
+puts states
+```
+But all the keys are unique on the hash, it can't be two values with the same key. So now the index can be selected by the key, for example:
+```Ruby
+puts states["CA"]
+```
+Also we can specify the keys like:
+```Ruby
+states = {
+  :Pennsylvania => "PA",
+  :NewYork => "NY",
+  :California => "CA"
+}
+puts states
+```
+And are the same hashes.
+
+## Functions
+So functions in ruby are with this form:
+```Ruby
+def name(arguments)
+  #Main code here
+end
+```
+For example the next function say hi to the user:
+```Ruby
+def sayhi
+  puts "Hello User"
+end
+```
+If we execute the code, nothing will be printed, we have to call it by doing:
+```Ruby
+def sayhi
+  puts "Hello User"
+end
+sayhi
+```
+Also we can do it like:
+```Ruby
+def sayhi()
+  puts "Hello User"
+end
+sayhi
+```
+So a more complex hello function can be:
+```Ruby
+def sayhi(name)
+  puts "Hello #{name}"
+end
+aName = gets.chomp().to_s
+sayhi(aName)
+```
+Also, we can gave parameters to default like in Python:
+```Ruby
+def sayhi(name,age=10)
+  puts "Hello #{name} your age is #{age}"
+end
+sayhi("Joaquin")
+```
+
+#### Return in function
+So like in all programming language the keyword return will return the function.
+For example, a function that return the cube of a number:
+```Ruby
+def cube(number)
+  return number * number * number
+end
+puts cube(3)
+```
+But we can return more values putting a coma in the return statement:
+```Ruby
+def cube(n)
+  return n * n * n,10
+end
+puts cube(3)
+```
+We return the cube of 3 and also 10
+## Conditionals
+So conditionals in ruby look like this:
+```Ruby
+if conditional
+  #instructions
+else
+  #instructions if conditional is false
+end
+```
+Or just an if statement
+```Ruby
+if conditional
+  #instructions
+end
+```
+Or the else if:
+```Ruby
+if condition1
+  #instructions 1
+elsif conditional2
+  #instructions 2
+else 
+  #instructions 3
+end
+```
+And we can operate some values with boolean.
+The logic operators are:
+- and
+- or 
+- ! : is the not of python
+
+The boolean operators are:
+- ==
+- <=
+- <
+- \>
+- \>=
