@@ -297,3 +297,53 @@ The boolean operators are:
 - <
 - \>
 - \>=
+
+## Case expressions
+Are special kind of conditional statement, like the switch of Java.
+It's sintax is like the next form:
+```Ruby
+case variable
+when comp1
+  #instructions1
+when comp2
+  #instructions2
+...
+when compN
+  #instructionsN
+else
+  #default instructions
+end
+```
+For example, we can make a method that convert the abreviation of a day of the week and convert to it's full name.
+```Ruby
+  def get_day_name(day)
+    day_name = ""
+    case day
+    when "mon"
+      day_name = "Monday"
+    when "tue"
+      day_name = "Tuesday"
+    when "wed"
+      day_name = "Wednesday"
+    when "thu"
+      day_name = "Thursday"
+    when "fri"
+      day_name = "Friday"
+    when "sat"
+      day_name = "Saturday"
+    when "sun"
+      day_name = "Sunday"
+    else
+      day_name = "Invalid data"
+    end
+    return day_name
+  end
+```
+
+## While Loops
+The while loop in ruby looks like this:
+```Ruby
+while condition
+  #instructions
+end
+```
