@@ -424,3 +424,169 @@ File.open("myfile.txt","r") do |file|
 end
 ```
 To write on a file, we use the method write on the proper mode.
+
+## Exception handling
+The exception handling in ruby are called rescues.
+
+To catch an error or an exception the syntax is doing:
+```Ruby
+begin
+  #instructions,it's the normal code
+rescue
+  #instructions that execute when the exception is thrown
+end
+```
+
+
+For example, the next program handles a division by zero:
+```Ruby
+begin
+  num = 10/0
+rescue
+  puts "Divided by zero"
+end
+```
+But now to specify the exception, the syntax looks like:
+```Ruby
+begin
+  #...
+rescue typeofError
+  #Instructions that execute when the type of error is thrown
+rescue typeofError2
+  #...
+end
+```
+To store the exception in a variable, we do:
+```Ruby
+begin
+  #...
+rescue typeOfError => var
+  #...
+end
+```
+So the type of error will be stored on the variable var.
+
+## Classes and Objects in Ruby
+
+The syntax for making a class in Ruby looks like:
+```Ruby
+class NameOfClass
+  #methods ...
+end
+```
+To specify the attributes of the class, we do:
+```Ruby
+class Book
+  attr_accessor :att1, :att2, :att3 #....
+end
+```
+For example, this is a book class:
+```Ruby
+class Book
+  attr_accessor :title, :author, :pages
+end
+```
+Now to create instances of books, we do:
+```Ruby
+book1 = Book.new()
+book1.title = "Harry Potter"
+book1.author = "JK Rowling"
+book1.pages = 400
+```
+
+#### Object constructor
+To have a constructor, the class need have the method initiliazer. The sintax looks like:
+```Ruby
+class NameOfClass
+  attr_accessor att1, att2
+  def initialize(att1,att2)
+    @att1 = att1 
+    @att2 = att2
+end
+``` 
+When we type @att1 it's the att1 of the class and not the parameter att1
+
+To use it, we do:
+```Ruby
+var = NameOfClass.new(att1,att2)
+```
+#### Methods of the objects
+To create methods on the classes in ruby, we do:
+```Ruby
+class NameOfClass
+  #...
+  def nameofmethod(params)
+    #instructions
+  end
+end
+```
+## Inheritance in Ruby
+
+To use the inheritance of objects in ruby we need a super class and a subclasses. If we got a super class called Super, to make a subclass of this, the sintax is like:
+```Ruby
+  class AnotherClass < Super
+    #instructions
+  end
+```
+Now the AnotherClass is a subclass of the Super class.
+
+Finally, to use the inheritance when are instance variables of the objects, we have to call the super class intialize method. This is done by using a super keyword.
+For example:
+```Ruby
+class SuperClass
+  attr_accessor supParam
+  def initialize(supParam)
+    @supParam = supParam
+  end
+end
+class SubClass < SuperClass
+  attr_accessor subParam
+  def initialize(supParam,subParam)
+    super(supParam)
+    @subParam = subParam
+  end
+end
+```
+##### Access control
+To make the access control of ruby, we have to do:
+```Ruby
+class A
+  def fuu     #this method is public
+    #instructions
+  end
+  protected
+    def m2    #this method is protected
+      #instructions
+    end
+  private 
+    def m3    #this method is private
+      #instructions
+    end
+end
+```
+The attr_accessor make the attribute private in usage.
+##### Override
+Now to override the methods, we do the same sign of that method. (Same name and arguments of the method to be overwriten).
+## Modules
+To use modules, this is a group of methods or classes. This are like the packages of Java.
+
+To create one, we simple do
+
+```Ruby
+#this is on the myModule.rb file
+module myModule
+  def m1
+    puts "This is a method of m1"
+  end
+  def m2
+    puts "This is a method of m2"
+  end
+end
+```
+myModule is essentialy storing the methods inside it. To include a module in another script, we do and use a method of it we do it by:
+```Ruby
+require_relative "myModule.rb"
+include myModule
+myModule.m1
+```
+The require_relative is for ''importing'' the other file relative of the current file that is being edited.
