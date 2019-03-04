@@ -1,6 +1,6 @@
 
 Crash course link: https://www.youtube.com/watch?v=t_ispmWmdjY
-I'm on minute: 1:59:13
+I'm on minute: 2:23:25
 # Introduction
 So Ruby will be similar to python, so to do it more quickly i will see an crash course.
 
@@ -347,3 +347,80 @@ while condition
   #instructions
 end
 ```
+
+## For Loops
+The for in ruby is like a for each in a collection.
+It's sintax looks like:
+```Ruby
+for var in collection
+  #instructions
+end
+```
+For example, the next program print out a collection of friends:
+```Ruby
+friends = ["Kevin","Karen","Oscar","Angela","Andy"]
+
+for element in friends
+  puts element
+end
+```
+But also, we can make a do statement like a for each one. This is seen like:
+```Ruby
+collection.each do |var|
+  #instructions
+end
+```
+For looping on the index, we do:
+```Ruby
+for index in 0..n
+  #instructions, loops from 0 to n including
+end
+```
+Another sintax sugar, like each-do, for doing this is
+```Ruby
+n.times do |index|
+  #instructions, this loops from 0 to n-1 times
+end
+```
+## Comments
+To write comments of one line in ruby, it's done by starting with a # on that line and afterwards, the values written there are ignored by ruby interpreted.
+
+To write multiple lines of comments, we can do:
+```Ruby
+=begin
+=end
+```
+With no white spaces before them.
+
+## Reading files in Ruby
+To read a file in ruby, we use the File class. This is done by:
+```Ruby
+File.open("path_to_file","mode") do |variable|
+  #instructions
+end
+```
+The modes can be read, write, overwrite. To reference the to the file is the variable. The file is closed in the end
+
+For example, the next program prints out every line on the file:
+```Ruby
+File.open("myfile.txt","r") do |file|
+  puts file.read() #read the whole file in one execution
+end
+```
+The read makes an string output from the line.
+
+This other program read and prints out the first line of the file:
+```Ruby
+File.open("myfile.txt","r") do |file|
+  puts file.readline() #read the first line, and moves the cursor to the next line
+end
+```
+To make the program from before we can do:
+```Ruby
+File.open("myfile.txt","r") do |file|
+  for line in file.readlines() #make a collection of all the lines of the file
+    puts line
+  end
+end
+```
+To write on a file, we use the method write on the proper mode.
