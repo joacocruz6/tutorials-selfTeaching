@@ -1,6 +1,4 @@
 
-Crash course link: https://www.youtube.com/watch?v=t_ispmWmdjY
-I'm on minute: 2:23:25
 # Introduction
 So Ruby will be similar to python, so to do it more quickly i will see an crash course.
 
