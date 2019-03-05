@@ -15,8 +15,8 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
-  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - [ ] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
+  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
