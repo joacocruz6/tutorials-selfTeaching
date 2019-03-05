@@ -33,6 +33,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] Scala: TODO
   - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
+
 Also, there is some good full courses of each one for beginners, these are:
   - Ruby: https://www.youtube.com/playlist?list=PLMK2xMz5H5Zv8eC8b4K6tMaE1-Z9FgSOp
   - Angular:  https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
@@ -41,5 +42,6 @@ Also, there is some good full courses of each one for beginners, these are:
   - HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
   - HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
   - React.js and Redux : https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG
+
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
