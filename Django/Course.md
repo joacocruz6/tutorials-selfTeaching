@@ -1,4 +1,4 @@
-I'm on the: 1:05:01
+I'm on the: 2:49:01
 
 # Intro and installation
 So the guy is just teaching django and he doesn't build a full project. I already know Python (versions 2.X and 3.X) on a very middle level (not an expert but not a beginner) so this will not be notes of Python. Also he is on a mac, and i'm on ubuntu so windows user will not have the same commands.
@@ -326,4 +326,382 @@ And the base.html content will appear but the replace me will be replaced by the
 ```
 The content of the base.html will be shown and no other content, because this will not be con the block content so django eliminates it.
 
-You can do also {%endblock content%} and will also work.
+You can do also {%endblock content%} and will also work. Now just the block content will change with the different pages.
+
+## The include template tag
+So now, another level of the inheritance between templates can be done by another tag called include template.
+
+For example, we have just the html for a navigation bar. A simple toy one can be:
+```html
+<nav>
+    <ul>
+        <li>Brand</li>
+        <li>Contact</li>
+        <li>Brand</li>
+    </ul>
+</nav>
+```
+And now I want to have this navbar html on many pages. To use it, for example on our base page, we need to do:
+```html
+...
+<body>
+{% include 'navbar.html'%}
+...
+</body>
+...
+```
+And now in that block will be all the html of the navbar instead. This is usefull in order to separate responsabilities to our project.
+
+## Rendering Context on the templates.
+To use templates is for getting data from the backend. Now this is for the context on the render function seen on the views.py . Now we can pass through context variables. The context is a dictionary so the key of that dictionary will be ''transformed'' into a variable. For example we have now the next about view function:
+```python
+def about_view(request, *args, **kwargs):
+    my_context = {
+        "my_text":"This is about us",
+        "my_number":123
+    }
+    return render(request,"about.html",my_context)
+```
+
+Now on the html we can put:
+```html
+{% extends "base.html" %}
+{% block content %}
+<h1>About</h1>
+<p>This is a template</p>
+
+<p>
+{{ my_text }}, {{ my_number }}
+</p>
+
+{% endblock content %}
+```
+
+## Loops in templates
+Now supose the context variables have a list or a collection on it. For example now the context has this variables:
+```python
+my_context = {
+    ...
+    "my_list": [1,2,3,4,5]
+}
+```
+
+Now we want to show that context variables on the html like for example in a list of html. If we put it on the traditional way we will get the regular list like if we do print my_list. To do so we can put it in a for loop on the tamplate. To do a for loop on the template we type:
+```html
+{% for var in collection %}
+    #instructions
+{% endfor %}
+```
+To access the data we put the double {}.
+In this example we can do:
+```html
+...
+<ul>
+{% for item in my_list %}
+    <li> {{ item }} </li>
+{% endfor %}
+</ul>
+```
+And we will put the items on that list. Some features can be:
+- forloop.counter : will put the number of loops done on the iteration
+
+## Conditions on the template
+
+So now we want to make conditionals now on the templates. But this are going to be a few because if not the design on the view is bad. So in terms of design you just need a few if on the template however the mayority of them can be on the view.
+
+The structure of the conditionals are:
+```html
+{% if condition %}
+    <!instructions>
+{% else %}
+
+{% elif %} <! if you want to use it>
+
+{% endif %}
+
+```
+The boolean operators and the boolean variables are:
+- True
+- False
+- ==
+- <=
+- <
+- \>
+- \>=
+
+## Template tags filters
+A filter use a context variable and do something to it. To use it we can do a pipe with | next to the variable. The filter to use are on the documentation of django and there are a few examples of how to use it. The tamplate are used on the context variables, so we need to be on the double {}.
+
+## Rendering content and using the backend
+First we need access the data from the database. Open a django shell, then import the object model used.
+For example, use the product objects used before. To call the first one created we do:
+```python
+>>> obj = Product.objects.get(id=1)
+>>> dir(obj) #Show us what we can do with it
+```
+So now where we defined that id?. Django use it for us.
+
+Now let's see how to render the view of that product.
+Go to the view.py on the object folder (in this case product).
+And then we have to write the function to it:
+```python
+from .models import Product
+def product_detail_view(request):
+    obj = Product.objects.get(id=1) # first one created
+    context = {
+        'title': obj.title,
+        'description': obj.description
+    }
+    return render(request,"product/detail.html",context)
+```
+Now we want to get rid of the object that is going throw, we can do on the context:
+```python
+from .models import Product
+def product_detail_view(request):
+    obj = Product.objects.get(id=1) # first one created
+    context = {
+        'obj': obj
+    }
+    return render(request,"product/detail.html",context)
+```
+## Templates with Apps 
+Sometime we want to make our app to a third party one. Or make apps in form to use it on another projects on the near future.
+
+So the first thing to do is make another template folder inside our app model folder (for example the products).
+
+On the template we can make a products folder (another one) and then create a product_detail.html  like we have done before.
+
+For example here is a simple html code of the page:
+```html
+{% extends 'base.html' %}
+{% block content %}
+<h1> In App template: {{ object.title }} </h1>
+<p> {% if object.description != None and object.description != '' %}
+    {{ object.description }}
+    {% else %}
+    Description coming soon!
+    {% endif %}
+{% endblock %}
+```
+
+Now if we change on the view.py file we change:
+```python
+...
+    return render(request,"products/product_detail.html",context)
+```
+And now the template will be changed succesfully. Is a good practice to put the templates on the same app folder other than the templates itself
+
+## Django Model Forms
+Now to do forms on django on the app to let the users get and update information on the database is using forms. To generate a form of an app of the project we add on it's folder the forms.py script.
+
+
+For example:
+```python
+from django import forms
+from .models import Product
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = [
+            'title',
+            'description',
+            'price'
+        ]
+```
+So now we render it on a view:
+```python
+#view.py on the product folder
+from .forms import ProductForm
+
+def product_create_view(request):
+    form = ProductForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "products/product_create.html",context)
+```
+Now on the html document we do:
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST'> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Save' />
+
+</form>
+{% endblock %}
+
+```
+### Some explanation 
+
+#### A Raw Html Form
+So First create a raw html form, so first we need to change the html done before. The final product should look like this:
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST'> 
+    <input type='text' name='title' placeholder='Your title' />
+    <input type='submit' value='Save' />
+</form>
+{% endblock %}
+
+```
+Now on the view we comment the other function and now we do this function instead of the previous one:
+```python
+def product_create_view(request):
+    context={}
+    return render(request, "products/product_create.html",context)
+```
+Now this is a simple html, and is nothing to do about django. If we hit the save button, this will lead an error because it doesnt have the permissions to do it. To give it the permisions we type the:
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<form action='.' method='POST'> {% csrf_token %}
+    <input type='text' name='title' placeholder='Your title' />
+    <input type='submit' value='Save' />
+</form>
+{% endblock %}
+
+```
+Now the form is going throw (it's appearing to go throw) the webpage. Actually it's going throw the method of the request, because the request parameter handle all the request that are being made to the server. Now we can obtain it making:
+```python
+request.GET["nameOfTheParameter"]
+request.POST["nameOfTheParameter"
+```
+So if now we can store the data of the form to the database we can do:
+```python
+def product_create_view(request):
+    if request.method == "POST":
+        my_new_title = request.POST.get('title')
+        Product.objects.create(title=my_new_title) #will not create one, we need more data like price and description
+    context = {}
+    return render(request,"product/product_create.html",context)
+```
+It's a bad method of saving data, because it's not 
+####Pure Django Form
+So to create a pure Django form we need to now open the forms.py file created previously
+Now on this file we put:
+```python
+class RawProductFomr(forms.Form):
+    title       = forms.CharField()
+    description = forms.CharField()
+    price       = forms.DecimalField()
+
+```
+You can see more field types on the documentation of django.
+
+Now if we want to create the form, we have to go to the views.py, and enter the following:
+```python
+from .forms import RawProductForm
+#...
+def product_create_view(request):
+    my_form = RawProductForm()
+    context = {
+        "form" : my_form
+    }
+```
+And on the html view we put the:
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<form action='.' method='POST'> {% csrf_token %}
+    {{ form.as_p }} <! this is form as paragraph, see more on the documentation>
+    <input type='submit' value='Save' />
+</form>
+{% endblock %}
+
+```
+And there we go. We have created a form as pure django rendering. But that is the problem, we just rendered the form, nothing else. To submit the data to the database we need to pass the request and the type of data sent (POST or GET) to the form created on the view. This is:
+```python
+from .forms import RawProductForm
+#...
+def product_create_view(request):
+    my_form = RawProductForm() #Just to see the form, not to submit 
+    if request.method == "POST":
+        my_form = RawProductForm(request.POST) #It's for submissions request
+        if my_form.is_valid():
+            #Now the data is ok!, we do something with it like creating one.
+            Product.object.create(**my_form.cleaned_data) #We pass as keyarg the cleaned data
+        else:
+            print(my_form.errors)
+    context = {
+        "form" : my_form
+    }
+```
+Now django validate the form for us and also the browser do it, so it's pretty safe to do it on this method.
+#### Form Widgets
+So there are some options to change on our forms, like the field is require, this are on the django documentation.
+To make the description a text area we put:
+```python
+class RawProductFomr(forms.Form):
+    title       = forms.CharField()
+    description = forms.CharField(
+    widget=forms.Textarea(
+        attrs{
+            "rows": 10,
+            'cols':10,
+            'class':'text-area-class'
+        }
+        )
+    )
+    price       = forms.DecimalField()
+
+```
+So on the widget attributes we add the special html parameters that we want.
+
+#### Form Validation Methods.
+So now we want to validate the data of the form introduced. So now we understand the first form created and will be using that one with it's create view function.
+Now we want to look forward to the form.is_valid() method more deep.
+
+First we modifie the ProductForm like the next code:
+```python
+class ProductForm(forms.ModelForm):
+    title = forms.CharField(label=''
+                widget = forms.TextInput(attrs={"placeholder": "Your title"}))
+    description = forms.CharField(
+                        required = False,
+                        widget = forms.Textarea(
+                            attrs = {
+                                "placeholder": "Your Description",
+                                "class": "new-class-name two",
+                                "id": "my-id"
+                                "rows": 20,
+                                "cols": 120
+                            }
+                        )
+                )
+    price = forms.DecimalField(initial=199.99)
+    class Meta:
+        model = Product
+        fields = [
+            'title',
+            'description',
+            'price'
+        ]
+```
+Now to clean data that is going to be submitted we need to create a method of the form class with the form:
+```python 
+def clean_aDataOfTheForm(self, *args, **kwargs):
+    aData = self.cleaned_data.get("dataName")
+    if not someform in aData:
+        raise forms.ValidationError("Not valid message")
+    return aData    
+```
+For example, on the title on our form we do:
+```python
+def clean_title(self,*args,**kwargs):
+    title = self.cleaned_data.get("title")
+    if "CFE" in title:
+        return title
+    else:
+        raise forms.ValidationError("Insert a valid title")
+```
+And now if the string cfe is not on the title, will not pass through. So to validate data we need to create this functions on the text fields. 
+For example, emails 
