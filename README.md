@@ -16,17 +16,16 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [ ] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
-  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
-  - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+  - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
+  - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Vue.js: https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa
   - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
-  - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
   - [ ] HTML: https://www.youtube.com/watch?v=pQN-pnXPaVg
   - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
+  - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Elixir: TODO
   - [ ] Flutter: TODO
@@ -34,7 +33,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
 
-Also, there is some good full courses of each one for beginners, these are:
+Also, there is some good full courses of each one for beginners and some extra videos, these are:
   - Ruby: https://www.youtube.com/playlist?list=PLMK2xMz5H5Zv8eC8b4K6tMaE1-Z9FgSOp
   - Angular:  https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
   - Ruby On Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
@@ -42,6 +41,8 @@ Also, there is some good full courses of each one for beginners, these are:
   - HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
   - HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
   - React.js and Redux : https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG
+  - jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
+  - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
 
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
