@@ -1,4 +1,4 @@
-I'm on the: 2:53:17
+I'm on the: 3:07:17
 
 # Intro and installation
 So the guy is just teaching django and he doesn't build a full project. I already know Python (versions 2.X and 3.X) on a very middle level (not an expert but not a beginner) so this will not be notes of Python. Also he is on a mac, and i'm on ubuntu so windows user will not have the same commands.
@@ -100,7 +100,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.TextField()
 ```
-Now the models.method linked the class to the database and it will be submitted, and always will have to be inherited from the Model class of models. On the setting.py we need to added to the apps variable, calling by the class name.
+Now the models.method linked the class to the database and it will be submitted, and always will have to be inherited from the Model class of models. On the setting.py we need to added to the apps variable, calling by the folder name where the class was created.
 
 Now to tell django where is this, on the settings file, in the app variable we put the name of the folder. In this case is products.
 
