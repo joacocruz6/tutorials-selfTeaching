@@ -1,4 +1,4 @@
-I'm on the: 2:49:01
+I'm on the: 2:53:17
 
 # Intro and installation
 So the guy is just teaching django and he doesn't build a full project. I already know Python (versions 2.X and 3.X) on a very middle level (not an expert but not a beginner) so this will not be notes of Python. Also he is on a mac, and i'm on ubuntu so windows user will not have the same commands.
@@ -704,4 +704,199 @@ def clean_title(self,*args,**kwargs):
         raise forms.ValidationError("Insert a valid title")
 ```
 And now if the string cfe is not on the title, will not pass through. So to validate data we need to create this functions on the text fields. 
-For example, emails 
+For example, emails must contain an @ on some point, so a validation can be if "@" in email or something like that.
+
+## Forms initial values
+So we can set initial data on the forms that we make on django. To do it on the render function we start a dictionary with the initial data.
+On this dictionary the key is the field and it's value is the initial value of that field. Then when creating the form object we pass it like parameter initial the data provided.
+For example on the form that we have been working on now:
+```python
+# on the views.py file
+def render_initial_data(request):
+    initial_data = {
+        'title': "My initial data on the title"
+    }
+    form = ProductForm(request.POST or None, initial=initial_data)
+    context = {
+        'form': form
+    }
+    return render(request,"products/product_create.html",context)
+```
+Now to change the data of an object that is already on the database we need to pass it to the constructor as a parameter of instance.
+For example, to change the object with the id of 1, we do:
+```python
+# on the views.py file
+def render_initial_data(request):
+    initial_data = {
+        'title': "My initial data on the title"
+    }
+    obj = Product.objects.get(id=1)
+    form = ProductForm(request.POST or None, initial=initial_data,instance=obj)
+    context = {
+        'form': form
+    }
+    return render(request,"products/product_create.html",context)
+```
+And now the initial data of the form is the data of the object. So we can eliminate the initial field of the constructor to see all the initial data
+
+## Dynamic URL routing
+So now we want to create a page for each element of the database but this will be changing on the time, so we can't hardcoded to look like it. So we want to grab the id of an element of our database and create a route for it on every element. To do so, we need to create a view for each of the element, so create a dynamic view function on the 
+
+
+For example:
+```python
+def dynamic_lookup_view(request):
+    obj = Product.object.get(id=1)
+    context = {
+        'obj':obj
+    }
+    ...
+```
+On the urls.py file on the project main folder we need to change the url to making it dynamic, on this case:
+```python
+urlpatterns = [
+    path('products/<int:id>',dynamic_lookup_view,name='product')
+]
+```
+On the <\> brackets we can pass any data type, like integers, strings (str), slug, then we need to pass that variable to the function of rendering. This name of the variable is on the right of the : . So now the dynamic lookup function should look like this:
+```python
+def dynamic_lookup_view(request,id): #we add the id variable to the function
+    obj = Product.object.get(id=id)
+    context = {
+        'obj': obj
+    }
+    #...
+```
+So now the url will make a lookup on the database like we expect to do it.
+
+## Handle DoesNotExist problem
+This problem is made by not founding an object on the database. For this we import the next of the django shortcuts on the views.py:
+```python
+# on the views.py file
+from django.shortcuts import render, get_object_or_404
+#...
+def dynamic_lookup_view(request,id):
+    obj = get_object_or_404(Product,id=id)
+    #...
+```
+Now the error will say page not found. There is another way to make this Happen, we simply do a try catch block like the following:
+```python
+#we need to import this first
+from django.http import Http404
+#...
+def dynamic_lookup_view(request,id):
+    try:
+        obj = Product.objects.get(id=id)
+    except Product.DoesNotExist:
+        raise Http404
+    # ...
+```
+## Deleting objects and confirm changes on the database
+So to delete objects on the database we simply use:
+```python
+obj.delete()
+```
+But this will make it on a GET request but we want to make it with a POST request.
+So to do this we add:
+```python
+if request.method == "POST":
+    obj.delete()
+```
+So if you want to do it you can do a delete page and then redirect to a home page. 
+
+## Viewing a list of database objects
+So now we want to view a list of objects that are on the database. This are called query sets that we need to get, then we pass it to our context variables
+
+In our example is seen like this
+```python
+def product_list_view(request):
+    queryset = Product.objects.all()
+    context = {
+        "object_list": queryset 
+    }
+    # rendering...
+```
+So now we do a for loop to show it normally.
+
+## Dynamic Linking of URLs
+To create a link to a detail page we need a dynamic linking to it, so for example if want to create a detail page of our by hard coding it if we change one parameter we will have to change all parameters. The goal now is not do that.
+
+For example and explaining we will have the following html of our products:
+```html
+{% extends 'base.html' %}
+{% block content %}
+{% for instance in object_list %}
+    <p> {{ instance.id }} - <a href='/products/{{ instance.id }}/'> {{ instance.title }} </a></p>
+{% endfor %}
+{% endblock %}
+```
+So if we want to change the url of the 'a' tag we will need to change all of the url on the urls.py file. To not do this we want to make python do it so we will create a method on the product object model (or the app) that will be of that use. This method look like the following:
+```python
+#...
+class Product(models.Model):
+    #...
+    def get_absolut_url(self):
+        return f"/product/{self.id}/" #the f is for the string substitution on python
+```
+So now instead of hard coding the url we do on the html:
+```html
+...
+    <p> {{ instance.id }} - <a href='{{ instance.get_absolut_url }}'> {{ instance.title }} </a>
+...
+```
+And now the url is dinamic.
+
+## Django Reverse URLs
+Now we want to get the url of a detail to the title of the url which is on the urls.py file. This is going to simplify our url management of the project.
+
+To ilustrate it we continue with our product example:
+```python
+#...
+class Product(models.Model):
+#...
+    def get_absolut_url(self):
+        return reverse("product-detail",kwargs={"id": self.id }) #we pass kwargs by the name of the url on our detail page that need to the dinamic routing, 
+        #reverse(name,kwargs of the dinamic of the link)
+```
+So now this is more dinamic than before, the url is not any hardcoded.
+
+## In App Urls and Namespacing
+
+Now we can clean up our code, and we have a lot of views and a lot of path of that views. Also some names of the urls can be repeated if the project continue getting longer and longer. So that's a problem our app is not re-usable on this project. To make it more accessible, we can make the urls.py file on the app folder.
+ 
+To ilustrate this, we can make it on the products folder of the example:
+```python
+from django.urls import path
+from .views import (
+    product_create_view
+    #...
+)
+urlpatterns = [
+    path('' ...)
+    #...
+]
+```
+Now we need to import this file on the real one, this is made on the same variable adding:
+```python
+#project urls.py file
+urlpatterns = [
+    #...
+    path('products/', include('products.urls')),
+    #...
+]
+```
+
+But now the products details are wrong on the showing, we need to make a namespace to it. Namespacing is for passing the url to the app itself and not the webpage url. To do this on our example we do:
+```python
+#urls.py file of the products folder
+app_name = 'products'
+#...
+```
+And then on the model.py:
+```python
+def get_absolut_url(self):
+    return reverse("products:product-detail",kwargs={"id": self.id})
+```
+Now we can redistribute responsabilities 
+## Class Based Views
+### ListView
