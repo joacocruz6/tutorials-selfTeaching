@@ -15,7 +15,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] JavaScript: https://www.youtube.com/playlist?list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB
   - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
-  - [ ] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
+  - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
   - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
