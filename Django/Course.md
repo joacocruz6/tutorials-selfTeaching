@@ -1,4 +1,4 @@
-I'm on the: 3:07:17
+I'm on the: 3:37:17
 
 # Intro and installation
 So the guy is just teaching django and he doesn't build a full project. I already know Python (versions 2.X and 3.X) on a very middle level (not an expert but not a beginner) so this will not be notes of Python. Also he is on a mac, and i'm on ubuntu so windows user will not have the same commands.
@@ -746,7 +746,7 @@ So now we want to create a page for each element of the database but this will b
 For example:
 ```python
 def dynamic_lookup_view(request):
-    obj = Product.object.get(id=1)
+    obj = Product.objects.get(id=1)
     context = {
         'obj':obj
     }
@@ -855,8 +855,8 @@ To ilustrate it we continue with our product example:
 class Product(models.Model):
 #...
     def get_absolut_url(self):
-        return reverse("product-detail",kwargs={"id": self.id }) #we pass kwargs by the name of the url on our detail page that need to the dinamic routing, 
-        #reverse(name,kwargs of the dinamic of the link)
+        return reverse("product:product-detail",kwargs={"id": self.id }) #we pass kwargs by the name of the url on our detail page that need to the dinamic routing, 
+        #reverse(app:name,kwargs of the dinamic of the link)
 ```
 So now this is more dinamic than before, the url is not any hardcoded.
 
@@ -900,3 +900,324 @@ def get_absolut_url(self):
 Now we can redistribute responsabilities 
 ## Class Based Views
 ### ListView
+So now we will do an exercise but this time the views will be of an article publish page. Like on the exercise that i did but on the old way (or the way that we have been told by now).
+So now there is another way to use the views, first of all the model of the article will be the following:
+```python
+class Article(models.Model):
+    title = model.CharField(max_length=120)
+    content = models.TextField()
+    active = models.BooleanField(default=True)
+```
+
+
+So now we will do a list view of our articles that we had created on the database:
+```python
+from django.views.generic import (
+    CreateView,
+    DetailView,
+    ListView,
+    UpdateView,
+    ListView,
+    DeleteView
+)
+
+from .models import Article
+class ArticleListView(ListView):
+    queryset = Article.objects.all() #This is obligatory to the list view 
+```
+We didn't need do a render for it, we just need to create a query set to see it as a list. Now the urls on the python archives do now this:
+```python 
+from .views import ArticleListView
+
+urlpatterns = [
+    path('',ArticleListView.as_view(),name='article-list')
+
+]
+```
+
+And that's it, we have a list view of our objects on the database. But now there is a problem because python is looking for an html file that it doesn't have. Now the class based views look for a specific template, this are of the form: appName/classname\_nameOfview.html.
+
+On this case, the template route is: blog/article_list.html . But we can tell python what is the specific template that it have to look for. We do this on the view class:
+```python
+class ArticleListView(ListView):
+    template_name = 'articles/article_list.html'
+    #...
+```
+Now the django will see the view used.
+
+### Detail view
+Now the second class of view is the detail view. To make one we need to make the class, which form is similar of the list but we do now:
+```python
+class ArticleDetailView(DetailView):
+    template_name = 'articles/article_detail.html'
+    queryset      = Article.objects.all()
+```
+On the urls we imported and now we do the pathing:
+```python
+urlspaths = [
+    #...
+    path('<int:pk>',ArticleDetailView.as_view(),name='details-view')
+]
+```
+Note that the id name have to be pk, because django looks for the primary key of the database  (pk of the db) that is the id. But if we want to get the name as id we need to do the next changes. First change the path (obviously) to ''<int:id>''. Then on the class we override the get_object method, doing it like this:
+
+```python
+class ArticleDetailView(DetailView):
+    #...
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article, id = id_) #we need to import it on the script first
+```
+And now is working so fine. We need also the template for the html page
+### Create view of a model
+So first we need a model form to the articles or app that we are managing. Now on the script of views we add the following class:
+```python
+class ArticleCreateView(CreateView):
+    template_name = 'articles/articles_create.html'
+    queryset = Articles.objects.all()
+```
+Now we add the path as the other views based on classes but we now get an error. We didn't bring up our model form, we just made the view. The create view class need a model form because we need a form to create an object on the database. So now we need to add the following:
+
+```python
+class ArticleCreateView(CreateView):
+    template_name = 'articles/articles_create.html'
+    form_class = ArticleModelForm
+    queryset = Articles.objects.all()
+```
+And now the page work fine but at the time we create a object and store it on the database we have an error. This is because the form doesn't have an action url defined on the form we just passed through, although the object was created and all we still got an url error. To get rid of this error we just add the following method on the model of the Articles:
+```python
+class Article(models.Model):
+    #...
+    def get_absolute_url(self):
+        return reverse("articles:article-detail",kwargs={"id":self.id})
+```
+Now when we create a new article, we go to the detail page of the article created. But we can also change  it on the Create view class by overriding the next variables:
+```python
+class ArticleCreateView(CreateView):
+    #...
+    succes_url = '/'
+    #...
+    def get_success_url(self):
+        return '/' #we return some path here to leads where to go to when creating an object
+```
+
+### Updates views
+So now we can create updates views of our objects with the class based views on a simple way that is similar to the creation view. 
+The class should look like this:
+```python
+class ArticleUpdateView(UpdateView):
+    template_name = 'articles/article_create.html'
+    form_class = ArticleModelForm
+    queryset = Article.objects.all()
+    
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article, id = id_ )
+    def form_valid(self, form):
+        #...
+```
+### Delete view
+So the delete view is similar to the detail view. To tell django to get a delete view we do:
+```python
+class ArticleDeleteView(DeleteView):
+    template_name = 'articles/article_delete.html' #file of the view
+    
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Article,id=id_)
+    def get_success_url(self):
+        return reverse('blog:article-view')
+```
+Now we want to create a deletion form to delete objects from the database, this has the next structure:
+
+```html
+{% extends 'base.html' %}
+{% block content %}
+<form action='.' method='POST'> {% csrf_token %}
+    <h1> Do you want to delete the product "{{ object.title }}" ?</h1>
+    <p> <input type='submit' value='Yes' /> <a href='../'>Cancel</a> </p>
+
+</form>
+```
+## Function Based View to Class Based View
+So we have a function view and we want to pass it to a class view. For example the next is a simple function view:
+```python
+def my_fbv(request,*args,**kwargs):
+    return render(request,'about.html',{})
+```
+To convert this to a class view we want to make a class that inherit for a class named View, so first we want to imported on our views script:
+```python
+from django.views import View
+
+class ExampleView(View):
+    def get(self,request,*args,**kwargs): 
+        return render(request,'about.html',{})
+```
+Now we have to include this class view to our path, this is done by:
+```python
+path('',ExampleView.as_view(),name='courses-list')
+```
+Note that the method of the function is called as the method of the data, this time we are sending data by the get method, but if you want to send it and comunicate by post, the class method of our view have to be called post.
+
+So now what is the advantage, this can be used by changing the tamplate very quick because we can add a variable of the template overriding the other one and changing on the path. For example:
+```python
+class ExampleView(View)
+    template_name = "about.html"
+    def get(self,request,*args,**kwargs):
+
+        return render(request,self.template_name,{})
+```
+And now lines of code can be eliminated because we can change on the path the variable of the template name like this:
+```python
+path('',ExampleView.as_view(template_name="another.html"),name='courses-list')
+```
+## Raw detail on the class based views
+Now we want to create  a raw detail view with basic View object inheritance. To do this, the get or post method must receive a id parameter set by default on None and pass a instance of the database of the app . Like this:
+```py
+class ExampleView(View)
+    template_name = "about.html"
+    def get(self,request,id=None,*args,**kwargs):
+        context= {}
+        if id is not None:
+            obj = get_object_or_404(ExampleApp,id=id)
+            context['object'] = obj
+        return render(request,self.template_name,{})
+```
+Now the html have to differ a littlebit:
+```html
+<!...>
+{% block content %}
+<h1>{{object.id}} - {{object.title}}</h1>
+{% endblock %}
+``` 
+And the path need to have the id on the relative url path by being dinamic.
+
+## Raw List View
+Now to create a raw list view we do:
+```py
+class ExampleListView(View):
+    template_name = "aboutList.html"
+    queryset = ExampleApp.objects.all()
+    def get(self,request,*args,**kwargs):
+        context = {'objects': queryset}
+        return render(request,self.template_name,context)
+```
+The html of the view should look like this:
+```html
+{% extends 'base.html'%}
+{% block content %}
+{% for instance in objects %}
+    <p>{{instance.id}}-{{instance.title}}</p>
+{% endfor %}
+{% endblock %}
+```
+
+But now if we want to extend functionality of this view and if we want to mantain the encapsulation of the object we do instead:
+```py
+class ExampleListView(View):
+    template_name = "aboutList.html"
+    queryset = ExampleApp.objects.all()
+    def get_queryset(self):
+        return self.queryset
+    def get(self,request,*args,**kwargs):
+        context = {'objects': self.get_queryset()}
+        return render(request,self.template_name,context)
+```
+
+## Raw Creation View
+So the creation view have to have the post and the get method. 
+
+```py
+class ExampleCreateView(View):
+    template_name = 'create.html'
+    def get(self,request,*args,**kwargs):
+        form = ExampleModelForm()
+        context = {'form': form}
+        return render(request,self.template_name,context)
+    def post(self,request,*args,**kwargs):
+        form = ExampleModelForm(request.POST) #this let see the form when submitted
+        if form.is_valid():
+            form.save() #this allows me to save the data
+            form = ExampleModelForm() #re create the form for more adition (restart it)
+        context = {}
+        return render(request,self.template_name,context)
+```
+
+#### Form validation
+So on our form we have to validate the data we need to include the clean\_<dataName> on the form class, like for example a title or something that we seen before:
+```py 
+class ArticleForm(forms.ModelForm):
+    #...
+    def clean_title(self):
+        title = self.cleaned_data.get('title')
+        if title.lower() == 'abc': #this could be invalid for some reason
+            raise forms.ValidationError("Not a valid title")
+        return title
+```
+## Raw Update View
+So now the raw update view is very similar to the raw create view. But now we need to do some changes to the get object method of the class.
+It's almost the same as create but now we want to modify the item, so is for one particular item.
+
+For example:
+```py
+class ExampleUpdateView(View):
+    #...
+    def get_object(self):
+        id = self.kwargs.get("id")
+        obj = None
+        if id is not None:
+            obj = get_object_or_404(Course,id=id)
+        return obj
+    #...
+```
+But the get and post method should be of that item. In which case should look like this:
+```py
+class ExampleUpdateView(View):
+    #...
+    def get(self,request,id=None,*args,**kwargs):
+        #...
+        if obj is not None:
+            form = ExampleModelForm(instance=obj)
+            context['object'] = obj
+            #...
+        #...
+    def post(self,request,id=None,*args,**kwargs)_
+        #...
+        if obj is not None:
+            form = ExampleModelForm(request.POST,instance=obj)
+            #...
+        #...
+```
+Now we need to modify the pathing we need to pass the dinamic url for getting the id. This is:
+```py
+path('<int:id>/update/',ExampleUpdateView.as_view(),name="ExampleUpdateView")
+```
+And that's it.
+
+## Raw Delete Class View
+Now we need the delete raw view of before. For doing this we don't need the form. Just
+
+
+## Custom mixin for the class base views
+The mixin allows to extend a class base view with new code added to it. This grabs the advantages of multiple inheritance and removes code reduncy between the views apps. For example, update, delete and detail raw views need of the get specific object but it is the same method. So we can inheritance a mixin 
+
+So for example we have the next mixin:
+```py
+class ExampleObjectMixin(object):
+    modelClass = None #the class of the mixin, can be an example model class
+    lookup = 'id' #
+    def get_object(self):
+        id = self.kwargs.get('id')
+        obj = None
+        if id is not None:
+            obj = get_object_or_404(self.model,id=id)
+        return obj
+```
+Now the Delete view and update view can be subclasses of it and we can get rid of the lines of the get object method of them. Like in the next form:
+```py
+class ExampleDeleteView(ExampleObjectMixin,View):
+    #...
+```
+And we erase the get_object method inside the view.
+
+We need to inheritance in that order to make it work, first the mixins then the View.
