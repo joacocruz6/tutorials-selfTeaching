@@ -1,0 +1,2 @@
+# Introduction to AJAX
+So AJAX is not a programming language, is a way of doing javascript. The power of ajax is that we don't have to refresh the page in order to change the content from getting it to the backend. It's a cool way to make a page dinamic.
