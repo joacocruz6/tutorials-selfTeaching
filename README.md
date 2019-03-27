@@ -16,23 +16,22 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Jest (Test for JS): https://www.youtube.com/watch?v=7r4xVDI2vho
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
-  - [ ] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
+  - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
+  - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
+  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
+  - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
-  - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Vue.js: https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa
-  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
   - [ ] HTML: https://www.youtube.com/watch?v=pQN-pnXPaVg
-  - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
-  - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
-  - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
-  - [ ] Elixir: TODO
-  - [ ] Flutter: TODO
-  - [ ] Scala: TODO
-  - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
+  - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
+  - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
+  - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
+  - [ ] Express.js: TODO
+
 
 Also, there is some good full courses of each one for beginners and some extra videos, these are:
   - Ruby: https://www.youtube.com/playlist?list=PLMK2xMz5H5Zv8eC8b4K6tMaE1-Z9FgSOp
