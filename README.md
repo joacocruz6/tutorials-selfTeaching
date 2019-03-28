@@ -17,9 +17,10 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
+  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
   - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
-  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
+  - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
