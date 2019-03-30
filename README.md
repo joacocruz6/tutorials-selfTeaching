@@ -17,15 +17,16 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
+  - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
   - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
+   * [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
-  - [ ] Vue.js: https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa
   - [ ] HTML: https://www.youtube.com/watch?v=pQN-pnXPaVg
   - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX

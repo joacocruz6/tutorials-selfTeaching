@@ -1,4 +1,3 @@
-I'm on the: 3:37:17
 
 # Intro and installation
 So the guy is just teaching django and he doesn't build a full project. I already know Python (versions 2.X and 3.X) on a very middle level (not an expert but not a beginner) so this will not be notes of Python. Also he is on a mac, and i'm on ubuntu so windows user will not have the same commands.
@@ -46,7 +45,7 @@ And then to run the server we do:
 ```bash
 (venv) $ python manage.py runserver
 ```
-And this will throw a web page direction (ip:port), put it on your browser and a django welcome page is now shown C: . 
+And this will throw a web page direction (ip:port), put it on your browser and a django welcome page is now shown C: .
 
 # Settings
 So there is a file called settings.py . This file have very implications of our project.
@@ -87,7 +86,7 @@ To create some components we need to tell the manage to create by doing:
 This will create an app a folder with it's migration folder inside it. Every app will do one task and only one task.
 
 For example, we will create products on our web page, this is an app so we create by:
-```bash 
+```bash
 (venv) $ python manage.py startapp products
 ```
 Now we want to store a product on my backend of the web app. We will do it on the file which name is models.py .
@@ -183,13 +182,13 @@ class Product(models.Model):
 Now we want to notify the database, this is setting a default value or make it null, or on the last instance when making the migrations picking the first option and typing the default value.
 
 ## Views and URLS
-Now we want to change the default homepage of the project. So we need a view. 
+Now we want to change the default homepage of the project. So we need a view.
 So go to the view.py of the pages folder.
 
 Now we create the pages with function or classes of python. If there are functions they have to finish with '_view' text on it. For example, now we can do:
 ```python
 def home_view():
-    return 
+    return
 ```
 We can return a string of html code, but by now this function is pure python so it's not going to do much. For start working we need to import HttpResponse object. This is:
 ```python
@@ -464,7 +463,7 @@ def product_detail_view(request):
     }
     return render(request,"product/detail.html",context)
 ```
-## Templates with Apps 
+## Templates with Apps
 Sometime we want to make our app to a third party one. Or make apps in form to use it on another projects on the near future.
 
 So the first thing to do is make another template folder inside our app model folder (for example the products).
@@ -536,7 +535,7 @@ Now on the html document we do:
 {% endblock %}
 
 ```
-### Some explanation 
+### Some explanation
 
 #### A Raw Html Form
 So First create a raw html form, so first we need to change the html done before. The final product should look like this:
@@ -544,7 +543,7 @@ So First create a raw html form, so first we need to change the html done before
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST'> 
+<form method='POST'>
     <input type='text' name='title' placeholder='Your title' />
     <input type='submit' value='Save' />
 </form>
@@ -583,7 +582,7 @@ def product_create_view(request):
     context = {}
     return render(request,"product/product_create.html",context)
 ```
-It's a bad method of saving data, because it's not 
+It's a bad method of saving data, because it's not
 ####Pure Django Form
 So to create a pure Django form we need to now open the forms.py file created previously
 Now on this file we put:
@@ -623,7 +622,7 @@ And there we go. We have created a form as pure django rendering. But that is th
 from .forms import RawProductForm
 #...
 def product_create_view(request):
-    my_form = RawProductForm() #Just to see the form, not to submit 
+    my_form = RawProductForm() #Just to see the form, not to submit
     if request.method == "POST":
         my_form = RawProductForm(request.POST) #It's for submissions request
         if my_form.is_valid():
@@ -687,7 +686,7 @@ class ProductForm(forms.ModelForm):
         ]
 ```
 Now to clean data that is going to be submitted we need to create a method of the form class with the form:
-```python 
+```python
 def clean_aDataOfTheForm(self, *args, **kwargs):
     aData = self.cleaned_data.get("dataName")
     if not someform in aData:
@@ -703,7 +702,7 @@ def clean_title(self,*args,**kwargs):
     else:
         raise forms.ValidationError("Insert a valid title")
 ```
-And now if the string cfe is not on the title, will not pass through. So to validate data we need to create this functions on the text fields. 
+And now if the string cfe is not on the title, will not pass through. So to validate data we need to create this functions on the text fields.
 For example, emails must contain an @ on some point, so a validation can be if "@" in email or something like that.
 
 ## Forms initial values
@@ -740,7 +739,7 @@ def render_initial_data(request):
 And now the initial data of the form is the data of the object. So we can eliminate the initial field of the constructor to see all the initial data
 
 ## Dynamic URL routing
-So now we want to create a page for each element of the database but this will be changing on the time, so we can't hardcoded to look like it. So we want to grab the id of an element of our database and create a route for it on every element. To do so, we need to create a view for each of the element, so create a dynamic view function on the 
+So now we want to create a page for each element of the database but this will be changing on the time, so we can't hardcoded to look like it. So we want to grab the id of an element of our database and create a route for it on every element. To do so, we need to create a view for each of the element, so create a dynamic view function on the
 
 
 For example:
@@ -802,7 +801,7 @@ So to do this we add:
 if request.method == "POST":
     obj.delete()
 ```
-So if you want to do it you can do a delete page and then redirect to a home page. 
+So if you want to do it you can do a delete page and then redirect to a home page.
 
 ## Viewing a list of database objects
 So now we want to view a list of objects that are on the database. This are called query sets that we need to get, then we pass it to our context variables
@@ -812,7 +811,7 @@ In our example is seen like this
 def product_list_view(request):
     queryset = Product.objects.all()
     context = {
-        "object_list": queryset 
+        "object_list": queryset
     }
     # rendering...
 ```
@@ -855,7 +854,7 @@ To ilustrate it we continue with our product example:
 class Product(models.Model):
 #...
     def get_absolut_url(self):
-        return reverse("product:product-detail",kwargs={"id": self.id }) #we pass kwargs by the name of the url on our detail page that need to the dinamic routing, 
+        return reverse("product:product-detail",kwargs={"id": self.id }) #we pass kwargs by the name of the url on our detail page that need to the dinamic routing,
         #reverse(app:name,kwargs of the dinamic of the link)
 ```
 So now this is more dinamic than before, the url is not any hardcoded.
@@ -863,7 +862,7 @@ So now this is more dinamic than before, the url is not any hardcoded.
 ## In App Urls and Namespacing
 
 Now we can clean up our code, and we have a lot of views and a lot of path of that views. Also some names of the urls can be repeated if the project continue getting longer and longer. So that's a problem our app is not re-usable on this project. To make it more accessible, we can make the urls.py file on the app folder.
- 
+
 To ilustrate this, we can make it on the products folder of the example:
 ```python
 from django.urls import path
@@ -897,7 +896,7 @@ And then on the model.py:
 def get_absolut_url(self):
     return reverse("products:product-detail",kwargs={"id": self.id})
 ```
-Now we can redistribute responsabilities 
+Now we can redistribute responsabilities
 ## Class Based Views
 ### ListView
 So now we will do an exercise but this time the views will be of an article publish page. Like on the exercise that i did but on the old way (or the way that we have been told by now).
@@ -923,10 +922,10 @@ from django.views.generic import (
 
 from .models import Article
 class ArticleListView(ListView):
-    queryset = Article.objects.all() #This is obligatory to the list view 
+    queryset = Article.objects.all() #This is obligatory to the list view
 ```
 We didn't need do a render for it, we just need to create a query set to see it as a list. Now the urls on the python archives do now this:
-```python 
+```python
 from .views import ArticleListView
 
 urlpatterns = [
@@ -1002,14 +1001,14 @@ class ArticleCreateView(CreateView):
 ```
 
 ### Updates views
-So now we can create updates views of our objects with the class based views on a simple way that is similar to the creation view. 
+So now we can create updates views of our objects with the class based views on a simple way that is similar to the creation view.
 The class should look like this:
 ```python
 class ArticleUpdateView(UpdateView):
     template_name = 'articles/article_create.html'
     form_class = ArticleModelForm
     queryset = Article.objects.all()
-    
+
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Article, id = id_ )
@@ -1021,7 +1020,7 @@ So the delete view is similar to the detail view. To tell django to get a delete
 ```python
 class ArticleDeleteView(DeleteView):
     template_name = 'articles/article_delete.html' #file of the view
-    
+
     def get_object(self):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Article,id=id_)
@@ -1050,7 +1049,7 @@ To convert this to a class view we want to make a class that inherit for a class
 from django.views import View
 
 class ExampleView(View):
-    def get(self,request,*args,**kwargs): 
+    def get(self,request,*args,**kwargs):
         return render(request,'about.html',{})
 ```
 Now we have to include this class view to our path, this is done by:
@@ -1089,7 +1088,7 @@ Now the html have to differ a littlebit:
 {% block content %}
 <h1>{{object.id}} - {{object.title}}</h1>
 {% endblock %}
-``` 
+```
 And the path need to have the id on the relative url path by being dinamic.
 
 ## Raw List View
@@ -1125,7 +1124,7 @@ class ExampleListView(View):
 ```
 
 ## Raw Creation View
-So the creation view have to have the post and the get method. 
+So the creation view have to have the post and the get method.
 
 ```py
 class ExampleCreateView(View):
@@ -1145,7 +1144,7 @@ class ExampleCreateView(View):
 
 #### Form validation
 So on our form we have to validate the data we need to include the clean\_<dataName> on the form class, like for example a title or something that we seen before:
-```py 
+```py
 class ArticleForm(forms.ModelForm):
     #...
     def clean_title(self):
@@ -1199,7 +1198,7 @@ Now we need the delete raw view of before. For doing this we don't need the form
 
 
 ## Custom mixin for the class base views
-The mixin allows to extend a class base view with new code added to it. This grabs the advantages of multiple inheritance and removes code reduncy between the views apps. For example, update, delete and detail raw views need of the get specific object but it is the same method. So we can inheritance a mixin 
+The mixin allows to extend a class base view with new code added to it. This grabs the advantages of multiple inheritance and removes code reduncy between the views apps. For example, update, delete and detail raw views need of the get specific object but it is the same method. So we can inheritance a mixin
 
 So for example we have the next mixin:
 ```py
