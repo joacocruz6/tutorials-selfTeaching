@@ -1,4 +1,4 @@
-I'm on the: 00:07:53
+I'm on the: 00:36:41
 # Vue.js Course
 ## Installation
 We want to start making apps with Vue.js because screw JS vanilla. To install it you need to have Node.js with the npm. Then we do:
@@ -145,4 +145,200 @@ Another directive that is does the same thing as the {{}} is the v-text. We can 
 ```
 
 #### Parsing text static
-So we want not to change the code every time but to mantain it on a static way. To do this we use the v-once directive, and inside the html tags
+So we want not to change the code every time but to mantain it on a static way. To do this we use the v-once directive, and inside the html tags will be parsed and rendered once.
+
+#### Looping
+So in Vue.js we can loop within the HTML. The directivo to do this is v-for. For example, we will loop in an array of cats:
+
+And the array is on the Vue object:
+```js
+app = new Vue({
+  el: '#root',
+  data: {
+    cats: [
+      'kitkat',
+      'fish',
+      'henry',
+      'bosco',
+      'melanthios'
+    ]
+  }
+});
+```
+So now we want to display it on a unordered list on our html, to do this we execute the v-for, like a for each, directive:
+```html
+<div id="root">
+  <ul>
+    <li v-for="cat in cats">{{ cat }}</li>
+  </ul>
+</div>
+```
+And there we go a list of cats. We can do this with objects, and everything that is iterable.
+#### Functions
+So now we want to do functions on Vue. So now we stick with the example of the list of cats and want to add one more. So we add and input and a button to the html:
+```html
+<div id="root">
+  <input v-model="newCat">
+  <button> + ADD</button>
+  <ul>
+    <li v-for="cat in cats">{{ cat }}</li>
+  </ul>
+</div>
+```
+So now we want to add the cat typed on the list of cats. To do this we want to create a function and bind it to the button tag. The directive use to do this is v-on. The form of it is: 'v-on:event="funName"'. On this case:
+```html
+<div id="root">
+  <input v-model="newCat">
+  <button v-on:click="addKitty"> + ADD</button>
+  <ul>
+    <li v-for="cat in cats">{{ cat }}</li>
+  </ul>
+</div>
+```
+Now to make the Vue object execute the function, we add a new attribute called methods that is a object of functions with 'name: definition' form. We can access any data variable on this attribute. On the example will be modified like:
+```js
+app = new Vue({
+  el: '#root',
+  data: {
+    cats: [
+      'kitkat',
+      'fish',
+      'henry',
+      'bosco',
+      'melanthios'
+    ],
+    newCat: ''
+  },
+  methods: {
+    addKitty: function(){
+      return this.cats.push(this.newCat);
+    }
+  }
+});
+```
+A shortcut to the v-on is the '@', like on this example another way to write it is:
+```html
+<div id="root">
+  <input v-model="newCat">
+  <button @click="addKitty"> + ADD</button>
+  <ul>
+    <li v-for="cat in cats">{{ cat }}</li>
+  </ul>
+</div>
+```
+#### Filters
+So we want to change the display of the DOM but no the data on the Vue object by a pipe, to add format to the displayed data. To do this, we have something called filters that make this functions pipes.
+
+For example, now every cat will be on capital letter:
+
+On the html we add:
+```html
+    <li v-for="cat in cats">{{ cat | capitalize }}</li>
+```
+The order of execution will be from left to right. And on the Javascript we add:
+```js
+app = new Vue({
+  el: '#root',
+  data: {
+    cats: [
+      'kitkat',
+      'fish',
+      'henry',
+      'bosco',
+      'melanthios'
+    ],
+    newCat: ''
+  },
+  methods: {
+    addKitty: function(){
+      return this.cats.push(this.newCat);
+    }
+  },
+  filters: {
+    capitalize: function(value){
+      return value.toUpperCase();
+    }
+  }
+});
+```
+
+#### Components
+So we want to create a custom component on the page. To do this, we add to the Vue object but not inside of it, but outside. For example the list of cats can be used like a component:
+```js
+Vue.component('cat-list',{
+  template:
+  <ul>
+    <li> cat </li>
+  </ul>
+});
+app = new Vue({
+  el: '#root',
+  component: [
+    'cat-list'
+  ],
+  data: {
+    cats: [
+      'kitkat',
+      'fish',
+      'henry',
+      'bosco',
+      'melanthios'
+    ],
+    newCat: ''
+  },
+  methods: {
+    addKitty: function(){
+      return this.cats.push(this.newCat);
+    }
+  },
+  filters: {
+    capitalize: function(value){
+      return value.toUpperCase();
+    }
+  }
+});
+```
+We have to make sure to added to the Vue, like tell it that it has a component available. Now to use it on the html we do:
+```html
+<cat-list />
+```
+And there will be our list with cat. But we may want to pass some variables, to do this we pass on a field called props, that is an array of variables names which the Vue object have.
+On this example will be on the list of cats:
+```js
+Vue.component('cat-list',{
+  props: ['cats'],
+  template:
+  <ul>
+    <li v-for="cat in cats" > {{ cat }} </li>
+  </ul>
+});
+```
+Now the props are variable that the list can receive when added to the html, so to add the cats list to it we do on the html:
+```html
+<cat-list :cats="cats" />
+```
+And now the props receive will be the cats array on the vue. Notice that the ':' will add variables from the vue object, but without it will be a string.
+
+#### Vue life
+The idea to have components is the reusable code that they provide because they follow a modular architecture. But they have a creation, presentation, then updates and destroy. So to handle this events, we have four fields which are functions on the Vue object that are called
+```js
+app = new Vue({
+  created: function(){
+    //instructions to do when created
+  },
+  mounted: function(){
+    //instructions to do when mounted
+  },
+  updated: function(){
+    //instructions to do when the view is updated
+  },
+  destroyed: function(){
+    //instructions to do when destroyed
+  }
+});
+```
+
+So what is destroy? We can destroy the vue object by calling it by it's name and then calling a method to destroy it, which means that it's transformed to static html all the content that it's been attached to it. To destroy one we do:
+```js
+app.$destroy();
+```
