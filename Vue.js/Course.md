@@ -1,5 +1,20 @@
 I'm on the: 00:36:41
 # Vue.js Course
+## Using Vue.js on our scripts
+To use Vue.js on our scripts, we can imported on the link side of our HTML, which are one of these three:
+```html
+<!-- For learning porpouses, these is the latest version -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!-- For developing, this is the latest stable-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<!-- If using native ES Modules we use: -->
+<script type="module">
+  import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.esm.browser.js'
+</script>
+```
+For more info visit: https://vuejs.org/v2/guide/installation.html
+
+Or install the vue cli. The vue cli is for large apps, so it will be more complicated if we want to use a backend framework like rails or Django.
 ## Installation
 We want to start making apps with Vue.js because screw JS vanilla. To install it you need to have Node.js with the npm. Then we do:
 ```bash
