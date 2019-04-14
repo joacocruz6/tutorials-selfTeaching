@@ -207,14 +207,81 @@ So sometimes we want to hide some implementation of the objects to the client, f
 function Circle(radius){
     this.radius = radius;
     this.defaultLocation = {x:0,y:0};
-    this.computeOptimumLocation = () => {return;}
+    this.computeOptimumLocation = (factor) => {return;}
     this.draw = ()=>{
         this.computeOptimumLocation();
         console.log('draw');
     };
 }
 ```
-So we need to hide the details default location and computeOptimumLocation. To do this, we need to make:
-```js
+So we need to hide the details default location and computeOptimumLocation. To do this, we need to make private methods and properties. 
 
+On JavaScript, we make private variables like declaring it as a variable on the constructor function like this:
+```js
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocation = {x:0,y:0}; // This is now a private propertie
+    let computeOptimumLocation = (factor=0.1) => {return;} // This is now a private function
+    this.draw = ()=>{
+        computeOptimumLocation(); //We just call it, because are locals methods and properties
+        console.log('draw');
+    };
+}
+```
+Now this methods and properties survives because of the scope is within the object and not a single method of it.
+
+## Getters and Setters
+So now that we have getters and setters, we do this methods on the constructors. Technally this are not private methods on our object, but we can't access to it,to do this we have two ways. The first and naive way to do it is the following:
+```js
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocation = {x:0,y:0}; // This is now a private propertie
+    let computeOptimumLocation = (factor=0.1) => {return;} // This is now a private function
+    this.getDefaultLocation = () => {return defaultLocation};
+    this.draw = ()=>{
+        computeOptimumLocation(); //We just call it, because are locals methods and properties
+        console.log('draw');
+    };
+}
+```
+This is the common way to do it. But another way which we can call like this the method:
+```js
+circle.defaultLocation;
+```
+To do it like this, we do:
+```js
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocation = {x:0,y:0}; // This is now a private propertie
+    let computeOptimumLocation = (factor=0.1) => {return;} // This is now a private function
+    this.draw = ()=>{
+        computeOptimumLocation(); //We just call it, because are locals methods and properties
+        console.log('draw');
+    };
+    Object.defineProperty(this,'defaultLocation',{
+        get: () =>{
+            return defaultLocation;
+        }
+    });
+}
+```
+To do a setter know we do:
+```js
+function Circle(radius){
+    this.radius = radius;
+    let defaultLocation = {x:0,y:0}; // This is now a private propertie
+    let computeOptimumLocation = (factor=0.1) => {return;} // This is now a private function
+    this.draw = ()=>{
+        computeOptimumLocation(); //We just call it, because are locals methods and properties
+        console.log('draw');
+    };
+    Object.defineProperty(this,'defaultLocation',{
+        get: () =>{
+            return defaultLocation;
+        }
+        set: (value) =>{
+            defaultLocation = value;
+        }
+    });
+}
 ```
