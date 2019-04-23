@@ -18,13 +18,12 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
-  - [ ] CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
+  - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
+  - [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
   - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
-  - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
-   * [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
   - [ ] HTML: https://www.youtube.com/watch?v=pQN-pnXPaVg
@@ -45,6 +44,6 @@ Also, there is some good full courses of each one for beginners and some extra v
   - React.js and Redux : https://www.youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG
   - jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
-
+  - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
 A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
 I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
