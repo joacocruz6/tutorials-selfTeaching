@@ -45,5 +45,10 @@ Also, there is some good full courses of each one for beginners and some extra v
   - jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
-A little disclaimer, I am doing this for fun, because I love programming and coding, I need to keep learning languages  and make versioning of it, so why not sharing my notes to the world!. If someone of the community want to check my notes, that's no problem for me, and if you want to correct some things, that's ok too! Just let me know!.
-I wanna give a special thanks to the Platzi company, their videos encourage me to keep learning, however I can't pay their courses, but I will give them a try in a near future.
+  - JavaScript fetch API: https://www.youtube.com/watch?v=Oive66jrwBs
+  - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
+  - JavaSrcipt Classes: https://www.youtube.com/watch?v=2ZphE5HcQPQ
+  - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
+  - JavaScript POO 2: https://www.youtube.com/watch?v=vDJpGenyHaA
+# Self Learning Archives
+Here will be my notes for my self learning processes. They will be all made by markdown archives and they are parts from free videos on youtube.
