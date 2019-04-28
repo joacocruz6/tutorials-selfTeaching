@@ -47,7 +47,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - JavaScript fetch API: https://www.youtube.com/watch?v=Oive66jrwBs
   - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
-  - JavaSrcipt Classes: https://www.youtube.com/watch?v=2ZphE5HcQPQ
+  - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
   - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
   - Java Android Apps: https://www.youtube.com/watch?v=988UZFB0heA
