@@ -49,6 +49,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
   - JavaSrcipt Classes: https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
-  - JavaScript POO 2: https://www.youtube.com/watch?v=vDJpGenyHaA
+  - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
+  - Java Android Apps: https://www.youtube.com/watch?v=988UZFB0heA
 # Self Learning Archives
 Here will be my notes for my self learning processes. They will be all made by markdown archives and they are parts from free videos on youtube.
