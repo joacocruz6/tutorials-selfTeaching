@@ -83,6 +83,42 @@ Now we can do:
 console.log(Book.topBookStore());
 ```
 Now to generate private variables we can't use the scope trick to do a private variable. But it's a convention that a private variable is done by an underscore name on it like _title or _author is intended to be private but it doesn't.
+## Getters and Setters 
+So to make setters and getters on the classes we do for example a square object:
+```js
+class Square {
+    constructor(_width){
+        this.width = _width;
+        this.height = _width;
+    }
+    get area() {
+        return this.width * this.height;
+    }
+}
+let s1= new Square(5);
+console.log(s1.area);
+```
+And to do area changes on the object we got the setters sugar:
+```js
+class Square {
+    constructor(_width){
+        this.width = _width;
+        this.height = _width;
+    }
+    get area() {
+        return this.width * this.height;
+    }
+    set area(area){
+        this.width = Math.sqrt(area);
+        this.height = this.width;
+    }
+}
+console.log(new Square(5).area);
+let s1= new Square(5);
+console.log(s1.area);
+s1.area = 25;
+
+```
 
 ## Inheritence
 Inheritence on classes is much simpler, the magazine object will look like this now:
@@ -95,3 +131,44 @@ class Magazine extends Book{
 }
 ```
 So we have the super pseudo variable on ES6. 
+
+## Polymorphism on javascript
+So let's define an animal class to ilustriate how the overriding of methods work and the polymorphism on JavaScript is done.
+```js
+class Animal{
+    constructor(name){
+        this.name = name;
+    }
+    makeSound(){
+        console.log("Generic Animal Sound!!");
+    }
+}
+class Dog extends Animal{
+    constructor(name){
+        super(name);
+    }
+    makeSound(){
+        console.log("Woof Woof");
+    }
+}
+```
+There we are done, we override the make sound method. To use the parent class first for example we can do:
+```js
+class Animal{
+    constructor(name){
+        this.name = name;
+    }
+    makeSound(){
+        console.log("Generic Animal Sound!!");
+    }
+}
+class Dog extends Animal{
+    constructor(name){
+        super(name);
+    }
+    makeSound(){
+        super.makeSound();
+        console.log("Woof Woof");
+    }
+}
+```
