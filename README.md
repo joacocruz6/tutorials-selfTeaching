@@ -19,14 +19,14 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
-  - [ ] ECMA Script 6+ : https://www.youtube.com/watch?v=nZ1DMMsyVyI
   - [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
+  - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
+  - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
   - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
-  - [ ] HTML: https://www.youtube.com/watch?v=pQN-pnXPaVg
   - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
   - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
