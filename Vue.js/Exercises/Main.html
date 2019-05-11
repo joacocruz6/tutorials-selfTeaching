@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Import of Vue.js-->
+     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+     <title>Document</title>
+</head>
+<body>
+     <div id="root">
+          <h1>{{ greeting }}</h1>
+          <input v-model="greeting">
+          <input v-model="count" type="number">
+          <div v-show="count === 2">
+               <h1>It's True!</h1>
+          </div>
+     </div>
+</body>
+<script>
+new Vue({
+     el: '#root',
+     data:{
+          greeting: 'Hello Vue',
+          count: 2
+     }
+});
+
+</script>
+</html>

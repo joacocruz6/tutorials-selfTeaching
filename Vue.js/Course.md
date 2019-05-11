@@ -357,3 +357,28 @@ So what is destroy? We can destroy the vue object by calling it by it's name and
 ```js
 app.$destroy();
 ```
+## Vue Cli
+So we can create a vue app with the Vue cli development, to install it we use the Installation above.
+
+Now to create a new Vue app we do on a folder of a project:
+```bash
+vue create <app_name>
+```
+
+So let's create a quiz for example:
+```bash
+vue create quiz
+```
+The output of this should be a set of settings of vue, we can create our own but let's start with the default
+```bash
+? please pick a preset:
+> default (babel, eslint)
+  Manually select features
+```
+This will install the dependencies and create a folder called quiz with the things to do the app inside and the commands to start running it:
+```bash
+cd quiz
+npm run serve
+```
+
+So let open the app and let's the view the code source. So there is a lot of things, but the src directory and there is a file called 'main.js' which is here where the Vue object is rendered to the page. The html file which is attached by default is on the public directory called index.html.
