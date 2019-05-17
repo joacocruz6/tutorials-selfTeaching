@@ -1,4 +1,4 @@
-I'm on the: 00:36:41
+I'm on the: 00:50:00
 # Vue.js Course
 ## Using Vue.js on our scripts
 To use Vue.js on our scripts, we can imported on the link side of our HTML, which are one of these three:
@@ -382,3 +382,113 @@ npm run serve
 ```
 
 So let open the app and let's the view the code source. So there is a lot of things, but the src directory and there is a file called 'main.js' which is here where the Vue object is rendered to the page. The html file which is attached by default is on the public directory called index.html.
+
+## Looking through the code
+So if we go to the src folder, there we will find a main.js file. On this we will find the following setup code, which is mainly the same as we watched before, mounting the Vue instance to a html element.
+```js
+import Vue from 'vue'
+import App from './App.vue'
+Vue.config.productionTip = false;
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app');
+```
+The html that is rendering is at the public directory index.html. Vue auto inyects your script to the html, it create a bundle of all the src files and then it will rendered into the html with no effort. On the package.json file of your application, on the script part is all the things that vue is using to render our app.
+
+So first, vue is importing the App.vue on the src directory. This puts a template tag, a script tag and a style app. This works for every page like this:
+
+For every page we create a *.vue file. This has the html on the template tags of the file, the javascript that is going to interact with that html and the css style of it. So we can define separate components and then join them on the main.js to be rendered to the page.
+
+# Let's build a project
+So let's build a a project that is a quiz one. (start at the 40:00 of the video). So to do it first we will be deleting the file on the HelloVue.vue on the component folder, and we will create two components, one named **Header.vue** and the other one **QuestionBox.vue**, the question box will display the question box and the submit button.
+
+So one the question box we **NEED** a template tag of the html. So lets start putting some dummy tags on it:
+```html
+<!--On the QuestionBox.vue-->
+<template>
+  <h1>Question Box</h1>
+</template>
+```
+```html
+<template>
+  <h1>Header</h1>
+</template>
+```
+So now the App.vue keeps importin the HelloWorld vue component. Now we have to change it to:
+```html
+<script>
+import Header from './components/Header.vue'
+import QuestionBox from './components/QuestionBox.vue'
+</script>
+```
+And now on the same file we need to export them in the components:
+```html
+<script>
+//...
+export default {
+  name: 'app',
+  components: {
+    Header,
+    QuestionBox
+  }
+}
+</script>
+```
+So on the template tag of the App.vue we have to write now:
+```html
+<template>
+  <div id='app'>
+    <Header />
+    <QuestionBox />
+  </div>
+</template>
+```
+We will do now a bootstrap vue on the app, so we will have it install it as a third party component.
+
+So on our main.js we do:
+```js
+//...
+import BootstrapVue from 'bootstrap-vue' //js bootstrap
+//Now the css bootstrap
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+//...
+Vue.use(BootstrapVue)
+//...
+```
+Now on the header let's add a nav bar of bootstrap:
+```html
+<template>
+  <div>
+    <b-nav tabs>
+    <b-nav-item disable> <b>Fancy Quiz App </b> </b-nav-item>
+    <b-nav-item disable>Counter: 4/10</b-nav-item>
+    </b-nav>
+  </div>
+</template>
+```
+
+For the Question Box we will use the Jumbotron:
+```html
+<template>
+<div class="question-box-container">
+  <b-jumbotron header="BootstrapVue" lead="Bootstrap 4 Components for Vue.js 2">
+
+    <template slot="lead">
+      Some Questions
+    </template>
+
+    <hr class="my-4">
+
+    <p>
+      List of Answers
+    </p>
+
+    <b-button variant="primary" href="#">Submit</b-button>
+    <b-button variant="success" href="#">Next</b-button>
+  </b-jumbotron>
+</div>
+</template>
+```
+There will be all on the project folder.
