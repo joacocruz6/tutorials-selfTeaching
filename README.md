@@ -17,13 +17,14 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
+  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
   - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
-  - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc44
+  - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc4
   - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
@@ -38,6 +39,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Ruby: https://www.youtube.com/playlist?list=PLMK2xMz5H5Zv8eC8b4K6tMaE1-Z9FgSOp
   - Angular:  https://www.youtube.com/playlist?list=PLYxzS__5yYQlqCmHqDyW3yo5V79C7eaTe
   - Ruby On Rails: https://www.youtube.com/watch?v=Nqwbp5djGtM&list=PLIddmSRJEJ0uaT5imV49pJqP8CGSqN-7E
+  - Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
   - Django: https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBlmzzFcLgDhKTTfNLfX1IK
   - HTML and CSS: https://www.youtube.com/playlist?list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU
   - HTML and CSS 2: https://www.youtube.com/playlist?list=PL0eyrZgxdwhzLAFezzzdrmRPxyZL190CX
@@ -45,7 +47,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - jQuery: https://www.youtube.com/playlist?list=PL0eyrZgxdwhy7byLHsVkuhtRV_IpoJU7n
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
-  - JavaScript fetch API: https://www.youtube.com/watch?v=Oive66jrwBs
+  - JavaScript fetch API (Done): https://www.youtube.com/watch?v=Oive66jrwBs
   - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
   - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
