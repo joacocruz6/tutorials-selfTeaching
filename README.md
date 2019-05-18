@@ -1,4 +1,4 @@
-# Self Learning Archives
+# Self Teaching Files
 Here will be my notes for my self learning processes. They will be all made by markdown archives and they are parts from free videos on youtube.
 
 I already know languages, the more I am used to are Java (main one), Python, C, PHP, HTML, SQL.
