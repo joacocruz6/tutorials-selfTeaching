@@ -89,7 +89,7 @@ function getPosts(){
 }
 ```
 
-##Publishing data with fetch
+## Publishing data with fetch
 So we can do form submissions with fetch. To do this we will use the second parameter of the fetch function which an object with the headers and the data send.
 For this we do a form and a function called add posts:
 ```js
