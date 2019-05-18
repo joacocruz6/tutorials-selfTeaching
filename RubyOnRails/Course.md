@@ -1,5 +1,5 @@
 # Creating a blog with comments on Ruby on Rails
-I'm on the: 42:47
+I'm on the: 1:01:31
 Video link: https://www.youtube.com/watch?v=wbZ6yrVxScM
 ## Installing Ruby on Rails
 So to actually install Rails, we need to follow a good guide. One is at:
@@ -139,3 +139,111 @@ rake routes
 And it will show all the actions on our controllers
 ## Creating post
 So when we create a new post, we do the create method:
+```Ruby
+def create
+  @post = Post.new()
+end
+```
+But we need to pass on the parameter to create the post. To do this, we can pass it right away or you can create a private method to do it. We are going for the seconde option:
+```Ruby
+private
+
+def post_params
+  params.require(:post).permit(:title, :content)
+end
+```
+So this is a security thing on rails, the permit will make the ''form'' and we need to pass out the parameters by ourself using the permit method. So to pass it to our controller to create a post we do on the create method:
+```Ruby
+def create
+   @post = Post.new(post_params)
+end
+```
+Then if a post is created we can do some things to it:
+```Ruby
+def create
+   @post = Post.new(post_params)
+   if @post.save
+      redirect_to @post
+   else
+      render 'new'
+   end
+end
+```
+So now we need a view to the new and the create controls. So we create one with the same name but the html.erb extension. The new page can look like this:
+```html
+<h1 class="title"> New Post </h1>
+<div class="section">
+   <%= simple_form_for @post do |f| %>
+	<div class="control>
+		<%= f.input :title, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>
+		</div>
+	</div>
+	<% end %>
+</div>
+```
+So we can see here that rails code start with <% and finish with %>, and the = is for echo that ruby out, then, we are doing a for on a simple form of Rails, so wrapper: false is that we don't want the simple form wrapper because it has trouble with bulma framework. So that one is just one field of the form for just the title. To write the content we do basically the same for a text input. Now we need a bottom to submit the data to the server. We do for that:
+```html
+<%= f.button :submit, 'Create new post', class: "button is-primary" %>
+```
+So we will create an actual show method for the action of the form. So lets create one on the controller and we will show by the id:
+```Ruby
+def show
+   @post = Post.find(params[:id])
+end
+```
+And now create it's view:
+```html
+<section class="section">
+	<div class="container">
+		<h1 class="title"> <%= @post.title %> </h1>
+		<div class="content">
+			<%= @post.content %>
+		</div>
+	</div>
+</section>
+```
+So now let's improve our index, to show all the post on there:
+```Ruby
+def index
+   @posts = Post.all.order("created_at DESC")
+end
+```
+Now the html should look like this:
+```html
+<!--...-->
+<section class="section">
+<div class="container">
+	<% @posts.each do |post| %>
+	<div class="card">
+		<div class="card-content>
+			<div class="media">
+				<div class="media-content">
+					<p class="title is-4"> <%= link_to  post.title, post %>
+				</div>
+			</div>
+			<div class="content">
+				<%= post.content %>
+			</div>
+		</div>
+	<% end %>
+</div>
+</section> 
+```
+## Layouts
+So the layouts are like templates of Django used for not repeating every code at the pages across the files. So the base layout of all your application is the application.html.erb. The code is on the repo but it's the base of this and the most of it is bulma layout. The <%= yield %> is the tag for the section that is gonna be rendered to that profit.
+
+
+But there is a trick that on the base template we can mark content that it will be declared on the page itself which are the one with '' <%= yield :<a variable> %> '' So there we can do for example:
+```html
+<%= yield :title_page%>
+```
+And on the main view we can do at the beggining of the file:
+```html
+<% content_for :page_title, "Index" %>
+...
+```
+
+## Editing and updating the Posts
+So now we want to do is an update and an edit of the posts
+
+``` 
