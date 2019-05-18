@@ -18,21 +18,17 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
+  - [ ] Node.js: https://www.youtube.com/watch?v=9hDKfBKuXjI
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
-  - [ ] Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
-  - [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
-  - [ ] Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
   - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc4
-  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
-  - [ ] Ruby on Rails: https://www.youtube.com/playlist?list=PLGLfVvz_LVvSngZQwrhYXlPnJf1zYqghI
-  - [ ] Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
+  - [ ] Express.js: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
-  - [ ] Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
-  - [ ] GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
-  - [ ] Express.js: TODO
+  - [ ] TypeScript: https://www.youtube.com/watch?v=NjN00cM18Z4
+  - [ ] Angular: https://www.youtube.com/watch?v=2OHbjep_WjQ&list=PLWKjhJtqVAblNvGKk6aQVPAJHxrRXxHTs
+  
 
 
 Also, there is some good full courses of each one for beginners and some extra videos, these are:
@@ -48,8 +44,14 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - JavaScript fetch API (Done): https://www.youtube.com/watch?v=Oive66jrwBs
+  - JavaScript Modules: 
   - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
   - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
   - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
   - Java Android Apps: https://www.youtube.com/watch?v=988UZFB0heA
+  - Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
+  - Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
+  - GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
+  - Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
+  - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
