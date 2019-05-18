@@ -44,8 +44,8 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - JavaScript fetch API (Done): https://www.youtube.com/watch?v=Oive66jrwBs
-  - JavaScript Modules: 
-  - JavaScript Promises: https://www.youtube.com/watch?v=UP2MrLn4ux4
+  - JavaScript Modules:  https://www.youtube.com/watch?v=HqIkddLfCAk
+  - Async JavaScript (Callbacks, Promises, async await): https://www.youtube.com/watch?v=PoRJizFvM7s
   - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
   - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
@@ -54,4 +54,4 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
   - GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
-  - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8
+  - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8https://www.youtube.com/watch?v=HqIkddLfCAk
