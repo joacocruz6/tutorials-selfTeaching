@@ -1,6 +1,6 @@
-# Creating a blog with comments on Ruby on Rails
-I'm on the: 1:01:31
-Video link: https://www.youtube.com/watch?v=wbZ6yrVxScM
+# Creating a blog with Ruby on Rails
+I'm on the: 25:07
+Video link: https://www.youtube.com/watch?v=pPy0GQJLZUM
 ## Installing Ruby on Rails
 So to actually install Rails, we need to follow a good guide. One is at:
 www.installrails.com is pretty up to date. For linux I recommend following:
@@ -30,14 +30,6 @@ sudo gem install rails --no-ri --no-rdoc
 rails --version
 ```
 ## Starting the app
-We will be using Bulma (CSS Framework of Ruby). So Rails go to MVC pattern, which is Model View and Controller. So we will do posts and comments, each feature can:
-- Posts - CRUD (Create, Read, Update, Destroy)
-- Comments - CRD
-Some useful gems to use:
-- Better Errors
-- Bulma
-- Simple Form
-
 So let's create a new project, we do:
 ```bash
 rails new <projectName>
@@ -46,204 +38,168 @@ And rails will create a folder with the name of the given app. Now to start the 
 ```bash
 rails s
 ```
-## Installing the gems
-First things firsts, lets start to get those gems here. So on our gemfile, we put:
-```ruby
-gem 'better_errors', '~> 2.5', '>= 2.5.1' # This is better errors
-gem 'bulma', '~> 0.1.0'
-gem 'simple_form', '~> 4.1'
-```
+## Installing gems
 This can all be searched on www.rubygems.org (nice site though)
 
 Then we run bundle to fetch that data.
 ```bash
 bundle
 ```
-## Creating our controllers
-So let's create our first controller of our blog. For this we do:
-```bash
-rails g controller <NameOfController>
+##About Ruby on Rails in depth
+So ROR it's a web backend framework based on the MVC pattern. So the most important folder is the app folder, where they are the controllers, views and models of the MVC.
+
+For the controllers we got a controllers folder, for the views we got a views folder and for the models we have a models folder, which are all inside the app folder. So in the views folder we will found the layouts folder, in particular the **application.html.erb** one. The erb extension is for embedded ruby which make the html to ''understand ruby''. The file mentioned before are the base for all the views on our app. So inside from it we got:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
 ```
-So for our app we can do:
+We can see that ruby have it's own way to include the javascript and css. Also see that yield command, there is where all our html will be rendered (like the block and endblock of Django). 
+
+So the other folder that is important is the config one, because there will be our routes (or urls or pathing), on the routes.rb file. Will have a look in a moment.
+
+## Generating our first controller
+So let's create a controller, to do this on our bash we type:
 ```bash
-rails g controller posts
+rails g controller <name_of_controller>
 ```
-For the controller use plural for better documentation, this will generate a post_controller.rb file with:
-```Ruby
+So for our blog, we will do a post:
+```bash
+rails g controller Posts
+```
+So this will create a controller, this can be seen on app/controllers/post_controller.rb, and thhe file should look like this:
+```ruby
 class PostsController < ApplicationController
 end
 ```
-To get this to work we need to create a view of the index, so on the app/views/posts folder we do a view html.erb file (it's weird I know), for example: index.html.erb
-
-
-If we go to the localhost:3000/posts we got an error because we didn't route the controller. To route, go to the config/routes.rb . You will see:
-```Ruby
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
-```
-So now add:
-```Ruby
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :posts
-  root "posts#index" # this is for doing the /posts and view the index file
-
-
-end
-```
-## Importing the Bulma CSS
-So the bulma framework need to import the Bulma Style Sheet to our html. So to import it do:
-```css
-@import "bulma"
-```
-But you need to change the app/assets/stylesheets/application.css to application.scss 
-## Creating a Post
-So lets start with a creation action, so on our controller we do:
-```Ruby
+So let's create and index method inside this class:
+```ruby
 class PostsController < ApplicationController
-#...
-   def new
-   end
-   def create
-   end
+	def index
+	end
 end
 ```
-But the database doesn't know about anything of the Posts, so this is where the model comes in, to generate a model we do:
-```bash
-rails g model <nameOfModel> <field1>:<type1> <field2>:<type2> ...
-```
-Which on our case will be:
-```bash
-rails g model Post title:string content:text
-```
-And to modify this, we will make a migration but it will be later.
-The model is on the db/migrate/time_period_create_posts.rb
+So now let's create it's view.
+ ## Generating the view
+ To generate a view, we will go to the app/views/posts folder. Now let's create a view for that index method that we did before. Create the file ''index.html.erb''. And make it look like this:
+ ```html
+ <h1>Index </h1>
+ ```
+But now we need to route it.
 
-To make a migration (make changes to the database) we do:
-```bash
-rails db:migrate
+### Routing
+So let's route that view, on the route.rb file we will add a line like this:
+```ruby
+root 'controller#method'
 ```
-This will create a schema of the migrate. So also will be created a Post.rb file on the app/models
+On this case:
+```ruby
+root 'posts#index'
+```
+This says to rails, hey on the posts controller look for the index method.
 
-So to link the controller to it's model we do a new method. So on this one we put:
-```Ruby
-def new
-  @post = Post.new
+Now let's create another controller, like a pages one. So add an about method. Now let's route it but in a regular way, by a get method. So on the routes we add:
+```ruby
+get 'about' => 'pages#about'
+```
+## Setting dynamic routes for a controller
+So in the about of the pages let's add an specific page:
+```ruby
+def about
+	@title = 'About Us'
 end
 ```
-Now what is on routing?, to see this we type on our bash:
+So to add it to our html we do:
+```html
+<h1> <% puts @title%> </h1>
+```
+So we can write raw ruby instructions on the '<%' '%>'. But puts is so repetitive to look, rails does have a sintactic sugar for it, done by <%= something that it will be puts on %>
+```html
+<h1><%= @title %></h1>
+```
+So if we add a content on the controller:
+```ruby
+def about
+	@title = 'About Us'
+	@content = 'This is an about page'
+end
+```
+Then the html will be:
+```html
+<h1><%= @title %></h1>
+<p> <%= @content %></p>
+```
+Now on the future we will want to create, destroy, updated and read some posts. So creating that routes are a mess, but rails have a form to do it very easy, by resources. A resource is like a group of standard routes. So on our routes.rb we add:
+```ruby
+resources :posts
+```
+Now on our bash we can do:
 ```bash
 rake routes
 ```
-And it will show all the actions on our controllers
-## Creating post
-So when we create a new post, we do the create method:
-```Ruby
+And it will make all the routes on our application, and now we can see the resources added some routes. So let's create a new view for a post:
+```ruby
+def new
+end
+```
+This is gonna take care of the form of the new posts.
+So let's create it's view:
+```html
+<h1> Add Post </h1>
+```
+There we go! Now to get there we go to /posts/new and we will se the page rendered. So let's render a form:
+```html
+<h1> Add Post </h1>
+<%= form_for :post, url: posts_path do |f| %>
+	<p>
+		<%= f.labe :title %> <br>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :body %> <br>
+		<%= f.text_area :body %> <br>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+```
+So there is our form, see that the post have a title field which is a string and a body which is a text area. The url on the form for, is tha path of the creation method, on this case is called posts_path. Now let's create that method:
+```ruby
 def create
-  @post = Post.new()
+	render plain: params[:post].inspect
 end
 ```
-But we need to pass on the parameter to create the post. To do this, we can pass it right away or you can create a private method to do it. We are going for the seconde option:
-```Ruby
-private
-
-def post_params
-  params.require(:post).permit(:title, :content)
-end
-```
-So this is a security thing on rails, the permit will make the ''form'' and we need to pass out the parameters by ourself using the permit method. So to pass it to our controller to create a post we do on the create method:
-```Ruby
-def create
-   @post = Post.new(post_params)
-end
-```
-Then if a post is created we can do some things to it:
-```Ruby
-def create
-   @post = Post.new(post_params)
-   if @post.save
-      redirect_to @post
-   else
-      render 'new'
-   end
-end
-```
-So now we need a view to the new and the create controls. So we create one with the same name but the html.erb extension. The new page can look like this:
+As we can see, we will have the following output (on a submit example):
 ```html
-<h1 class="title"> New Post </h1>
-<div class="section">
-   <%= simple_form_for @post do |f| %>
-	<div class="control>
-		<%= f.input :title, input_html: {class: 'input'}, wrapper: false, label_html: {class: 'label'} %>
-		</div>
-	</div>
-	<% end %>
-</div>
-```
-So we can see here that rails code start with <% and finish with %>, and the = is for echo that ruby out, then, we are doing a for on a simple form of Rails, so wrapper: false is that we don't want the simple form wrapper because it has trouble with bulma framework. So that one is just one field of the form for just the title. To write the content we do basically the same for a text input. Now we need a bottom to submit the data to the server. We do for that:
-```html
-<%= f.button :submit, 'Create new post', class: "button is-primary" %>
-```
-So we will create an actual show method for the action of the form. So lets create one on the controller and we will show by the id:
-```Ruby
-def show
-   @post = Post.find(params[:id])
-end
-```
-And now create it's view:
-```html
-<section class="section">
-	<div class="container">
-		<h1 class="title"> <%= @post.title %> </h1>
-		<div class="content">
-			<%= @post.content %>
-		</div>
-	</div>
-</section>
-```
-So now let's improve our index, to show all the post on there:
-```Ruby
-def index
-   @posts = Post.all.order("created_at DESC")
-end
-```
-Now the html should look like this:
-```html
-<!--...-->
-<section class="section">
-<div class="container">
-	<% @posts.each do |post| %>
-	<div class="card">
-		<div class="card-content>
-			<div class="media">
-				<div class="media-content">
-					<p class="title is-4"> <%= link_to  post.title, post %>
-				</div>
-			</div>
-			<div class="content">
-				<%= post.content %>
-			</div>
-		</div>
-	<% end %>
-</div>
-</section> 
-```
-## Layouts
-So the layouts are like templates of Django used for not repeating every code at the pages across the files. So the base layout of all your application is the application.html.erb. The code is on the repo but it's the base of this and the most of it is bulma layout. The <%= yield %> is the tag for the section that is gonna be rendered to that profit.
-
-
-But there is a trick that on the base template we can mark content that it will be declared on the page itself which are the one with '' <%= yield :<a variable> %> '' So there we can do for example:
-```html
-<%= yield :title_page%>
-```
-And on the main view we can do at the beggining of the file:
-```html
-<% content_for :page_title, "Index" %>
-...
+{"title" => "test title", "body" => "test body"}
 ```
 
-## Editing and updating the Posts
-So now we want to do is an update and an edit of the posts
+So we got a hash of data from that form. Now to create an actual post we need a model. 
+## Creating a model
+So we need a model to save the form on the database. Rails create one with:
+```bash
+rails g model <Model_name_singular> <field1>:<tipe1> <field2>:<type2> ...
+```
+So it's a good practice use singular to a model and plural to it's controller. On our case we will do:
+```bash
+rails g model Post title:string body:text
+```
+So to create the table (we just tell ruby that we want one, it did not actually created one) we make migrations. In order to do that we type:
+```bash
+rake db:migrate
+```
 
-``` 
