@@ -17,7 +17,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
+  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Node.js: https://www.youtube.com/watch?v=9hDKfBKuXjI
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
