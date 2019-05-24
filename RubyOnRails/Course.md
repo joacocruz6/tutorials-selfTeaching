@@ -1,7 +1,6 @@
 # Creating a blog with Ruby on Rails
 
-I'm on the: 46:35
-Video link: https://www.youtube.com/watch?v=pPy0GQJLZUM
+Finished!
 
 ## Installing Ruby on Rails
 
@@ -524,3 +523,185 @@ So now let's add a link to that action, like on show:
 ```
 This is a confirmation for deletion on the data. 
 ## Adding some comments
+Now let's add some comments to our posts and to our a app. So lets add a model for that:
+```bash
+rails g model Comment username:string body:text post:references
+```
+The references is a link between comments and posts (a relationship to them). But now we need to modify our Post model:
+```ruby
+class Post < ActiveRecord
+	has_many :comments
+	validates :title, presence:true,
+					length: {minimum: 5}
+end
+```
+So now let's rout it, but we want to the users being able to do like 'post/1/comments/', i.e, we want to make the comments routes depends on the post. To do that we modify the resources of the post on the routes file:
+```ruby
+resources :posts do
+	resources :comments
+end
+```
+### Comments controller
+Let's generate the comment controller. To do that we create one:
+```bash
+rails g controller comments
+```
+Now on the show of the posts we add the new comments action:
+```html
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+<%= link_to "Delete", post_path(@post),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'},
+                    :class => 'btn btn-danger'%>
+
+<hr>
+<h3> Add Comment</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+     <p>
+          <%= f.label :username %> <br>
+          <%= f.text_field(:username, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.label :body %>
+          <%= f.text_area(:body, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.submit({:class => 'btn btn-default'}) %>
+     </p>
+<% end %>
+```
+Let's on the controller add the create method:
+```ruby
+def create
+	@post = Post.find(params[:post_id])
+	@comment = @post.comments.create(comment_params)
+	redirect_to post_path(@post)
+end
+private
+def comment_params
+	params.require(:comment).permit(:username,:body)
+end
+```
+Now let's add the comments created so far for that post on the show page. The html will be:
+```html
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+<%= link_to "Delete", post_path(@post),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'},
+                    :class => 'btn btn-danger'%>
+
+<hr>
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+     <div class="well">
+          <p>
+               <strong><%= comment.username %></strong>: <%= comment.body %>
+          </p>
+     </div>
+<% end %>
+<h3> Add Comment</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+     <p>
+          <%= f.label :username %> <br>
+          <%= f.text_field(:username, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.label :body %>
+          <%= f.text_area(:body, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.submit({:class => 'btn btn-default'}) %>
+     </p>
+<% end %>
+```
+But this html is too large, so in order to brake the application into modules let's create that html file on our own and render them to that page. So on the comments view we create the _comments.html.erb and the _form.html.erb. The underscore is for telling rails that they are partial, meaning that they will be use on a CRUD view later on. Then on the first one we put:
+```html
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+     <div class="well">
+          <p>
+               <strong><%= comment.username %></strong>: <%= comment.body %>
+          </p>
+     </div>
+<% end %>
+```
+And on the second one we put in:
+```html
+<h3> Add Comment</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+     <p>
+          <%= f.label :username %> <br>
+          <%= f.text_field(:username, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.label :body %>
+          <%= f.text_area(:body, {:class => 'form-control'}) %>
+     </p>
+     <p>
+          <%= f.submit({:class => 'btn btn-default'}) %>
+     </p>
+<% end %>
+```
+To render them in our page we do inside it:
+```html
+<h2><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+<%= link_to "Delete", post_path(@post),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'},
+                    :class => 'btn btn-danger'%>
+
+<hr>
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>
+```
+## Deleting comments
+Let's finally do deleting comments son on the comments html we have now:
+```html
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+     <div class="well">
+          <p>
+			<strong><%= comment.username %></strong>: <%= comment.body %>
+		<%= link_to '[X]', [comment.post,comment],
+				method: :delete,
+				data: {confirm: 'Are you sure?' } %>
+		</p>
+     </div>
+<% end %>
+```
+Then we need to create the destroy method:
+```ruby
+def destroy
+	@post = Post.find(params[:post_id])
+	@comment = @post.comments.find(params[:id])
+	@comment.destroy
+	redirect_to post_path(@post)
+end
+```
+## Http Athentication
+Now we want to just separate who can add comments, delete them etc...
+
+To do that we go to the post controller class and do:
+```ruby
+class PostsController < ApplicationController
+	http_basic_athenticate_with name: "Brad", password: "1234", except: [:index, :show]
+	#...
+end
+```
+This is showing that we can go to that views without authentication. We add the same to the comments controller:
+```ruby
+class CommentsController < ApplicationController
+	http_basic_athenticate_with name: "Brad", password: "1234", only: [:destroy]
+	#...
+end
+```
+This is telling ruby just want to athenticate when deleting a post
