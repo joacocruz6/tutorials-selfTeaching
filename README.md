@@ -44,7 +44,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Ruby on Rails: https://www.youtube.com/watch?v=wbZ6yrVxScM
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - JavaScript fetch API (Done): https://www.youtube.com/watch?v=Oive66jrwBs
-  - JavaScript Modules:  https://www.youtube.com/watch?v=JDDn57_z5Og
+  - JavaScript Modules(Done):  https://www.youtube.com/watch?v=JDDn57_z5Og
   - Async JavaScript (Callbacks, Promises, async await): https://www.youtube.com/watch?v=PoRJizFvM7s
   - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
