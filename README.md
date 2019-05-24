@@ -18,7 +18,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [x] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
-  - [ ] Node.js: https://www.youtube.com/watch?v=9hDKfBKuXjI
+  - [ ] Node.js: https://www.youtube.com/watch?v=TlB_eWDSMt4
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
@@ -56,3 +56,12 @@ Also, there is some good full courses of each one for beginners and some extra v
   - GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
   - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8https://www.youtube.com/watch?v=HqIkddLfCAk
+
+There are also some great channels that give us free content for learning by ourselfs:
+  - [FreeCodeCamp.org](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ): Great channel, it collects some videos of other people or creates it's own. It has very good courses, some that are on my list.
+  - [Programming with Mosh](https://www.youtube.com/user/programmingwithmosh): Mosh is the best free to start making apps on certain languages, his tutorials are really good and very well explained. The downside is that only the basics are free, because he teaches at udemy.
+  - [Traversy Media](https://www.youtube.com/user/TechGuyWeb): Traversy is also great, but it has only the basics on every step. Sometimes it can be boring but he explains building an example of the language or framework.
+
+I also recommend some companies to learn but we have to pay to them to use theirs tutorials. I personally when got the time and money to do it will try them, but some of the courses are free!:
+  - [Platzi](https://platzi.com/): Platzi is great, all the content is very well explained. They have a really good youtube channel to keep you informed [Platzi Youtube](https://www.youtube.com/channel/UC55-mxUj5Nj3niXFReG44OQ)
+  - [Udemy](https://www.udemy.com/): Udemy is very large, I think is the biggest place to get some course. The downside is that they have no free courses.
