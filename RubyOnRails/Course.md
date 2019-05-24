@@ -529,7 +529,7 @@ rails g model Comment username:string body:text post:references
 ```
 The references is a link between comments and posts (a relationship to them). But now we need to modify our Post model:
 ```ruby
-class Post < ActiveRecord
+class Post < ApplicationRecord
 	has_many :comments
 	validates :title, presence:true,
 					length: {minimum: 5}

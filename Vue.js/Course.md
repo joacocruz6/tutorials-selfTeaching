@@ -16,7 +16,7 @@ For more info visit: https://vuejs.org/v2/guide/installation.html
 
 Or install the vue cli. The vue cli is for large apps, so it will be more complicated if we want to use a backend framework like rails or Django.
 ## Installation
-We want to start making apps with Vue.js because screw JS vanilla. To install it you need to have Node.js with the npm. Then we do:
+We want to start making apps with Vue.js. To install it you need to have Node.js with the npm. Then we do:
 ```bash
 $ npm install -g @vue/cli
 # OR
