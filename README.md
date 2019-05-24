@@ -17,7 +17,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] Ruby: https://www.youtube.com/watch?v=t_ispmWmdjY
   - [x] Django: https://www.youtube.com/watch?v=F5mRW0jo-U4
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
-  - [ ] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
+  - [x] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Node.js: https://www.youtube.com/watch?v=9hDKfBKuXjI
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
@@ -49,6 +49,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
   - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
+  - JavaScript Game Dev: https://www.youtube.com/watch?v=3EMxBkqC4z0
   - Java Android Apps: https://www.youtube.com/watch?v=988UZFB0heA
   - Node.js: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gcy9lrvMJ75z9maRw4byYp
   - Docker: https://www.youtube.com/playlist?list=PLea0WJq13cnDsF4MrbNaw3b4jI0GT9yKt
