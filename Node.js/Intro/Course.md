@@ -1,6 +1,6 @@
 # Node.js Course
 Video: https://www.youtube.com/watch?v=TlB_eWDSMt4
-I'm on the minute: 15:36
+I'm on the minute: 27:26
 ## Introduction
 Node.js is a runtime environment for executing JavaScript Code. It's not a framework and not a language, is an enviroment to take out JavaScript of the browser and executing it on the machine. It's open source and that is so cool!. We can just run JavaScript on the backend if we want or build an API for JavaScript, and so on... We now have the power of JavaScript on our machine. So using node has many advantages, but mainly we allow us to not change our JavaScript between front end and back end.
 ## The Node.js Architecture
@@ -46,3 +46,78 @@ node main.js
 We get a error, because window is not defined in node.
 
 ## Node Module System
+Now we will see the modules build on node by default and how to create our own modules. The modules predefined are:
+- os
+- fs
+- events
+- http
+
+### Global objects
+So there are global objects build on node, for example:
+```js
+console.log();
+```
+The console object is known on every module of node, so we can access it on every file we create. Also we have for example:
+```js
+setTimeout(()=> console.log("hello"),1000);
+```
+So if it's standard JavaScript, we can use it on node. On this are:
+```js
+console.log();
+setTimeout();
+clearTimeout();
+setInterval();
+clearInterval();
+```
+But in our browser we have the window object which represent everything on JavaScript. For example, the console log method on the browser JS is: 
+```js
+window.console.log();
+```
+But in node we don't have the window object, instead we have the global object which replaces window:
+```js
+global.console.log();
+```
+But the main difference is that if for example in the vainilla JavaScript we do:
+```js
+var message = 'Some message';
+```
+Then the variable is passed to a propertie of the window object. Which means we can do:
+```js
+console.log(window.message);
+```
+But in node this do not happen with the global object, it doesn't add the message as a propertie of global:
+```js
+console.log(global.message);
+```
+Will be an error.
+
+Now here is the important part, if we declare a function on JavaScript, it is added globally through the window object. Which means that:
+```js
+var sayHello = function(){
+}
+```
+If we had this, we can do now: 
+```js
+window.sayHello();
+```
+But there is a problem with this behaviour, because if split the app within multiple files, then if two files have the same function name, then the one of them will be ignored. So we need to avoid making this to happen, we need modularity! (We need encapsulation of the files). Then every application has defined their module object and it's encapsulated. To make someone to see some functions we need to explicit say to node that it has been exported. Then there is a global object different from global that everyone in node knows which is the module one:
+```js
+console.log(module);
+```
+Will print our module object. In summary every file is a module and it's encapsulated within itself.
+## Creating Modules
+Let's create a module for logger messages, let's calle it logger.js. We want to use that module in another file called main.js. We will use one remote loggin services. So we have a url with requester of loggin in. Now:
+```js
+var url = 'http://mylogger.io/log';
+```
+Now we can use a log function to log in:
+```js
+function log(message){
+     //Send an http request to log us in
+}
+```
+We want to make the log function public in our app. So to export it we add:
+```js
+module.exports.log = log;
+```
+We just want to export the interface of usage, don't ever export the logic functions and variables!
