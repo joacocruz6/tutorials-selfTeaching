@@ -19,10 +19,10 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [x] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Node.js: https://www.youtube.com/watch?v=TlB_eWDSMt4
-  - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
+  - [ ] React: https://www.youtube.com/watch?v=Ke90Tje7VS0
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
-  - [ ] React.js: https://www.youtube.com/watch?v=DLX62G4lc4
+  - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Express.js: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
@@ -45,8 +45,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - CSS: https://www.youtube.com/watch?v=ieTHC78giGQ
   - JavaScript fetch API (Done): https://www.youtube.com/watch?v=Oive66jrwBs
   - JavaScript Modules(Done):  https://www.youtube.com/watch?v=JDDn57_z5Og
-  - Async JavaScript (Callbacks, Promises, async await): https://www.youtube.com/watch?v=PoRJizFvM7s
-  - JavaSrcipt Classes(done): https://www.youtube.com/watch?v=2ZphE5HcQPQ
+  - Async JavaScript (Callbacks, Promises, async await): https://www.youtube.com/watch?v=PoRJizFvMch?v=2ZphE5HcQPQ
   - JavaScript POO (Done): https://www.youtube.com/watch?v=PFmuCDHHpwk
   - JavaScript POO 2(Done): https://www.youtube.com/watch?v=vDJpGenyHaA
   - JavaScript Game Dev: https://www.youtube.com/watch?v=3EMxBkqC4z0
