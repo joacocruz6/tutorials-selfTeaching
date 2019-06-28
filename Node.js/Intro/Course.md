@@ -121,3 +121,16 @@ We want to make the log function public in our app. So to export it we add:
 module.exports.log = log;
 ```
 We just want to export the interface of usage, don't ever export the logic functions and variables!
+### Loading modules
+To load a module, we use the require function, which receive a route to our js module:
+```js
+require('./logger');
+```
+We don't put the js because node assume is a js file! It uses the relative path to it.
+If we do now:
+```js
+let logger = require('./logger');
+console.log(logger);
+```
+And we run it, it will show us that the logger variable is a JavaScript Object.
+
