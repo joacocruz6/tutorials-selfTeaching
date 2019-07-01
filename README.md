@@ -56,6 +56,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
   - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8https://www.youtube.com/watch?v=HqIkddLfCAk
   - React.js of Mosh: https://www.youtube.com/watch?v=Ke90Tje7VS0
+  
 There are also some great channels that give us free content for learning by ourselfs:
   - [FreeCodeCamp.org](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ): Great channel, it collects some videos of other people or creates it's own. It has very good courses, some that are on my list.
   - [Programming with Mosh](https://www.youtube.com/user/programmingwithmosh): Mosh is the best free to start making apps on certain languages, his tutorials are really good and very well explained. The downside is that only the basics are free, because he teaches at udemy.
