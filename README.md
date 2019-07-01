@@ -19,7 +19,7 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [x] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Node.js: https://www.youtube.com/watch?v=TlB_eWDSMt4
-  - [ ] React:  https://www.youtube.com/watch?v=DLX62G4lc44
+  - [ ] React: https://www.youtube.com/watch?v=DLX62G4lc44
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
   - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
