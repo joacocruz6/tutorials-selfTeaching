@@ -1,6 +1,6 @@
 Link:
 
-I'm on the: 0:00
+I'm on the: 24:40
 
 
 # Introduction to React
@@ -77,3 +77,26 @@ import ReactDOM from "react-dom";
 ReactDOM.render(<div> <h1> Hello World! </h1> <p> This is a paragraph </p> </div>, document.querySelector("#root"));
 ```
 It's not, this is because div is one element, but an h1 and a p are two elements.
+
+## Functional Components
+So imagine what is going to be to put the entire page on the render method, that is not reusable and it's not near a component. So let's create a functional component to the page.
+
+This are called functional because they are created by creating a function.
+
+This have to be by the constructor convension, they return the JSX that we want to render, if there are more than in one line, wrap it on a parenthesis, for example the hello world will be like:
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+function MyApp(){
+  return (<div>
+    <h1> Hello World! </h1>
+    <p> This is a paragraph </p>
+    </div>);
+}
+ReactDOM.render( (...), document.querySelector("#root"));
+```
+So to put it on the render method we simply do it like a self contained tag of html:
+```js
+ReactDom.render(<MyApp />, document.querySelector("#root"));
+```
