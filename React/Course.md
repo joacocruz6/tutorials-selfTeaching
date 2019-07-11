@@ -315,3 +315,26 @@ function App() {
 So we can refactor all this App content to just components. So we can nest component as much as we need.
 
 ## Syling Components with CSS classes
+
+So to start this we will create a new simple application with a header, a main content and the footer. So we have this three files on it:
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+```
