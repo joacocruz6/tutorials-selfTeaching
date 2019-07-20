@@ -1,6 +1,6 @@
 Link:
 https://www.youtube.com/watch?v=DLX62G4lc44
-I'm on the: 1:03:06
+I'm on the: 1:15:00
 - Pass: TODO list second phase
 # Introduction to React
 
@@ -489,4 +489,17 @@ So let's take a first look to an html file:
   </body>
 </html>
 ```
-So now what is wrong with this html? The thing is that they doesn't have their properties. So 
+So now what is wrong with this html? The thing is that they doesn't have their properties. So let's add them for example:
+```html
+<html>
+  <head></head>
+  <body>
+    <a href="google.com"> This is a link </a>
+    <input placeholder="First Name" name="" type="" />
+    <img src="" />
+  </body>
+</html>
+```
+Notice that this properties modify how the tags acts and behaves on the rendering of our webpage, so this is what a prop do, we can add them to a component like a html propertie and will modify the rendering of that component on our webpage, which means is more reusable on the page!.
+
+So how to make ...
