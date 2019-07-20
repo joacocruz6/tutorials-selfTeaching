@@ -1,7 +1,7 @@
 Link:
 https://www.youtube.com/watch?v=DLX62G4lc44
-I'm on the: 48:12
-
+I'm on the: 1:03:06
+- Pass: TODO list second phase
 # Introduction to React
 
 ### Why React?
@@ -338,3 +338,155 @@ function App() {
 
 export default App;
 ```
+
+Then that components are:
+
+```js
+//Header.js
+function Header() {
+  return <header>This is a header </header>;
+}
+export default Header;
+```
+
+```js
+//MainContent.js
+function MainContent() {
+  return <main> This is the main content </main>;
+}
+```
+
+```js
+//Footer
+function Footer() {
+  return <footer> This is the footer </footer>;
+}
+```
+
+So now let's add some styling to the component, on html we do this by the attribute of the tag called class, but we are not writing a html file anymore, this is a JavaScript file. So the class keyword is a language reserved one to create classes and prototype objects to them. So how we added it? Instead JSX use 'className':
+
+```js
+function Header() {
+  return <header className="navbar"> This is a header </header>;
+}
+export default Header;
+```
+
+Now on the style.css we can add some styling to the classes:
+
+```css
+body {
+  margin: 0;
+}
+
+.navbar {
+  height: 100px;
+  background-color: #333;
+  color: whitesmoke;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+You can only applied to them is to JSX elements, is not components. Like regular HTML.
+
+## JSX to JavaScript and Back
+
+So let's understand how JSX and JavaScript make together. First of all let's create a new app component with a hello world inside:
+
+```js
+function App() {
+  return <h1> Hello World! </h1>;
+}
+```
+
+So now what if we want to do it with some variables, like taking a name and saying hello to that name:
+
+```js
+function App() {
+  const firstName = "Bob";
+  const lastName = "Ziroll";
+  return <h1> Hello firstName + " " + lastName! </h1>;
+}
+```
+
+This isn't gonna work. So what are we going to do now to make the JavaScript render as used to be. This is done by putting on our JSX some curly braces, like this:
+
+```js
+const App = () => {
+  const firstName = "Bob";
+  const lastName = "Ziroll";
+  return <h1> Hello {`${firstName} ${lastName}`}! </h1>;
+};
+```
+
+Notice that here we do it using ES6 arrow function, but this can be done on the usual way with named functions instead.
+
+Now for example, let's create a hello in the morning and goodnight on the night:
+
+```js
+function App() {
+  const date = new Date();
+  return <h1> It is currently about {date.getHours() % 12} o'clock! </h1>;
+}
+```
+
+Now the component promised:
+
+```js
+function App() {
+  const date = new Date();
+  const hours = date.getHours();
+  let timeOfDay;
+  if (hours < 12) {
+    timeOfDay = "morning";
+  } else if (hours >= 12 && hours < 17) {
+    timeOfDay = "afternoon";
+  } else {
+    timeOfDay = "night";
+  }
+  return <h1> Good {timeOfDay}! </h1>;
+}
+```
+
+## Inline Styling with JSX
+
+So the style propertie of a HTML element is no valid on the JSX ones. It expects to be a JavaScript object, so if our html look like this:
+```html
+<h1 style="color : '#FF8C00'"> Hello World! </h1>
+```
+In our component, we use should use it like this:
+```js
+function App(){
+  return (
+    <h1 style={color: "#FF8C00"}> Hello World! </h1>
+  )
+}
+```
+But this doesn't work, because we write JavaScript on the JSX with curly braces, so to write the style we use now double curly braces:
+```js
+function App(){
+  return (
+    <h1 style={{color: "#FF8C00"}}> Hello World! </h1>
+  )
+}
+```
+To add additional styles, we add another propertie to that object, except with the '-' in the CSS ones, we replaces with the camelcase of the word. For example background-color will be now backgroundColor.
+## Props in React
+### What are Props
+So let's take a first look to an html file:
+```html
+<html>
+  <head></head>
+  <body>
+    <a> This is a link </a>
+    <input />
+    <img />
+  </body>
+</html>
+```
+So now what is wrong with this html? The thing is that they doesn't have their properties. So 
