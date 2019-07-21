@@ -19,10 +19,10 @@ The playlist of the videos will be pointed here and if someone will read my note
   - [x] AJAX: https://www.youtube.com/playlist?list=PL0eyrZgxdwhyeIDc3EA4XGsI9HoWLc6nF
   - [x] Ruby on Rails: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Node.js: https://www.youtube.com/watch?v=TlB_eWDSMt4
-  - [ ] React: https://www.youtube.com/watch?v=DLX62G4lc44
+  - [ ] React.js: https://www.youtube.com/watch?v=Ke90Tje7VS0
+  - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Java Android Dev: https://www.youtube.com/watch?v=FfgQRjR7YXY
   - [ ] Scala: https://www.youtube.com/watch?v=R0jVqeYzs9c
-  - [ ] Vue.js: https://www.youtube.com/watch?v=4deVCNJq3qc
   - [ ] Kotlin: https://www.youtube.com/playlist?list=PLTAt6CmaTiJ7SQeSPyPF-YwrOyBOIL2XN
   - [ ] Express.js: https://www.youtube.com/watch?v=L72fhGm1tfE
   - [ ] Go: https://www.youtube.com/playlist?list=PLQVvvaa0QuDeF3hP0wQoSxpkqgRcgxMqX
@@ -55,7 +55,7 @@ Also, there is some good full courses of each one for beginners and some extra v
   - GraphQL: https://www.youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f
   - Swift: https://www.youtube.com/watch?v=comQ1-x2a1Q
   - Django WebSockets: https://www.youtube.com/watch?v=RVH05S1qab8https://www.youtube.com/watch?v=HqIkddLfCAk
-  - React.js of Mosh: https://www.youtube.com/watch?v=Ke90Tje7VS0
+  - React of freecodecamp.org: https://www.youtube.com/watch?v=DLX62G4lc44
   
 There are also some great channels that give us free content for learning by ourselfs:
   - [FreeCodeCamp.org](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ): Great channel, it collects some videos of other people or creates it's own. It has very good courses, some that are on my list.
