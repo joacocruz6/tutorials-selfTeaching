@@ -1,505 +1,292 @@
-Link:
-https://www.youtube.com/watch?v=DLX62G4lc44
-I'm on the: 1:15:00
-- Pass: TODO list second phase
-# Introduction to React
+I'm on: 43:22
+# Introduction, What is react?
+We will build an app with react through the course. React is a JS library of front end. It based on components which are pieces of the UI. They are reausable, and every react app have at least one component which will be called root component, which contains child components therefore the app is a tree of components.
 
-### Why React?
+For example, let's think of tweeter, tweeter have a profile, the trends , a navbar and a feed. The feed have the tweets and the like components, then components can be made of more components!.
 
-So why use the react library. Some people say that is faster than vainilla JavaScript.
-This is true, React use something called the Virtual DOM, which manipulation is way faster than the real one.
-
-Another thing to keep in mind is that React uses reausable web components in an application, and make the code nicer and more readable. For example the bootstrap navbar can be used like:
-
-```html
-<body>
-  <MySweetNavbar />
-  <MainContent />
-  <MySweetFooter />
-</body>
-```
-
-This is a really nice, clean and simple code of a navbar.
-
-### React DOM and the JSX
-
-So let's get right to the code, (the guy of the video is on scrimba). So make a index.js and first of all let's import react on it:
-
+In terms of implementation, the components are typically a JS class with a state field and a render method. For example the tweets can be:
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
+class Tweet {
+state={}
+render() {
+}
 ```
+The render method tells how the UI looks like and it returns a React Element. Which is not a DOM Element, is a JS object that represents the DOM element on memory. That memory of the DOM elements on react is called * Virtual DOM * . So now that we have this virtual DOM we manipulate that DOM instead of the real one because react will be on charge of the changes on the real DOM. To update the real dom we have to change the state of our component and react will ''react'' to that change and it will change the real DOM.
 
-Simple so far right?, so now we will tell the DOM of react to render some things on our page:
+# Downloading React
+So first we need Node.js and npm. Then on our bash do:
+```bash
+npm i -g create-react-app
+```
+On the course, we will use this version:
+```bash
+npm i -g create-react-app@1.5.2
+```
+On vscode install the following extensions:
+- Simple React Snippets
+- Prettier - Code formatter
 
+## Creating the first react app
+So let's start with react, to create one let's do on our bash:
+```bash
+create-react-app <name_of_app>
+```
+This installs react and the following libraries:
+- Development Server
+- Webpack
+- Babel
+- etc...
+
+But we don't need to configurate anything. Now let's create a react app called my-react-app:
+```bash
+create-react-app my-react-app
+```
+Then move the folder of the app and type:
+```bash
+npm start
+```
+Let's peek inside the project folder, there are:
+- node_modules -> doesn't matter to much for now.
+- public: this have:
+	
+	* favicon.ico
+	* index.html -> have the root of our react app.
+	* manifest.json -> metadata attributes 
+- src: our project one, we have a app.js component which is the standard component of the project.
+
+Now let's see the app.js file:
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render();
+import React, { Component } from 'react';
+//...
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<header className="App-header">
+					<img src={logo} className="App-logo" alt="logo" />
+					<h1 className="App-title"> Welcome to React </h1>
+				</header>
+				<p className="App-intro">
+				To get started, edit <code> src/App.js</code> and save to reload.
+				</p>
+			</div>
+			);
+	}
+}
 ```
-
-So the render method takes two arguments, the first one is what do we want to render and the second one is where is going to be render it. In code this looks like:
-
+Whaaaat, html on our js? Well yes, but this is not pure html, this is the JSX object (a react element) which is how the UI is going to look up. This pass through babel, which is a compiler for modern JavaScript to make things that our browser understands. For example if we write:
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<what to render>, <where to render it>);
+const element = <h1> Hello World! </h1>;
 ```
-
-Now let's do a basic html file with the typical structure of a web page:
-
-```html
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="index.pack.js" charset="utf-8"></script>
-  </body>
-</html>
-```
-
-The main atention will be on the div of the id "root". This div acts as a container for the entire application, so everything on the application will be on that div. So let's create a Hello World header 1 on the page,
-we create this by:
-
+Babel will transform it to:
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<h1> Hello World! </h1>, document.querySelector("#root"));
-```
-
-What? Html on our JavaScript? Well yes but also no, React have something called jsx, which is a pseudo language to "put" html on the JavaScript, then React transpile it to a react DOM element. It has very similar syntax to Ja html.
-
-Something to be clear about is that JSX doesn't allow us to put multiple html tag in once, we have to put a single tag with multiple inside for example:
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<h1> Hello World! </h1> <p> This is a paragraph </p>, document.querySelector("#root"));
-```
-
-This is an error to react but the following:
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(
-  <div>
-    {" "}
-    <h1> Hello World! </h1> <p> This is a paragraph </p>{" "}
-  </div>,
-  document.querySelector("#root")
+var element = React.createElement(
+	"h1",
+	null,
+	"Hello World"
 );
 ```
+This code is called to the react create element. So it much simpler that just using react.
 
-It's not, this is because div is one element, but an h1 and a p are two elements.
-
-## Functional Components
-
-So imagine what is going to be to put the entire page on the render method, that is not reusable and it's not near a component. So let's create a functional component to the page.
-
-This are called functional because they are created by creating a function.
-
-This have to be by the constructor convension, they return the JSX that we want to render, if there are more than in one line, wrap it on a parenthesis, for example the hello world will be like:
-
+## Creating a component from scratch
+Let's delete all the files on the src folder of our tutorial app. Now let's create a new file called ''index.js''. Now let's import some modules. The modules are:
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-function MyApp(){
-  return (<div>
-    <h1> Hello World! </h1>
-    <p> This is a paragraph </p>
-    </div>);
-}
-ReactDOM.render( (...), document.querySelector("#root"));
+import React from 'react';
+import ReactDOM from 'react-dom';
 ```
-
-So to put it on the render method we simply do it like a self contained tag of html:
-
+Now let's create a constant to create our app element, we will set it to a jsx expression:
 ```js
-ReactDom.render(<MyApp />, document.querySelector("#root"));
+const element = <h1>Hello World!</h1>;
+console.log(element);
 ```
+Also react changes the browser view with every save, so if you want to autosave will get the refresh instantly.
 
-## Moving components to separate files.
+Now we want to render this on the actual DOM, because the jsx component just exists on the virtual DOM of react.
 
-So the great thing that react has it's that we can separate our app to different components. But for now this is not usefull because they are all on the same file.
-
-So to move components to multiple files we need to do is create a file with the exact same name of our component. Let's say MyApp.js, and put the function there, so we got now this two files:
-
+To do this now we add the following lines:
 ```js
-//index.js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<MyApp />, document.querySelector("#root"));
+const element = <h1>Hellow World!</h1>;
+ReactDom.render(element,document.querySelector("#root"));
 ```
+The first argument is the react jsx element and the second one is where on the app is going to be (on which html or DOM object will it be), this time is the root one of the index.html of our project.
 
+Now we will see the h1 tag on our app. In a real app, this element will be much complex, and we will have a tree of components attached to it. But for now is that simple to do it.
+
+## Components on react
+So we are ready to start on react, first create another project to get the little app we are going to build.  the app we will build is on the 22:42 of the video, and have many patterns of the react development. Which is a item list, and a navigation bar.
+
+So let's install bootstrap on react, to do it we use it on npm:
+```bash
+npm i bootstrap@4.1.1
+```
+And we import it on our index.js file:
 ```js
-//MyApp.js
+import 'bootstrap/dist/css/bootstrap.css';
+```
+We then save, and now let's create a first component. Let's create a new folder inside the src folder called 'components'. Here let's add the first component which will be a counter. So let's create a file on the components folder called 'counter.jsx'.
 
-function MyApp() {
-  return (
-    <div>
-      <h1> Hello World! </h1>
-      <p> This is a paragraph </p>
-    </div>
-  );
+On this module, we have to import react and it's component library. So the simple react snippets will do it for us (they are really common imports), the shortcut is: imrc + tab. And to create a component class we use cc + tab. 
+
+Let's call the class Counter. This will not have an state, and will return a simple h1 with hello world on it. The code should look like this:
+```js
+import React, { Component } from 'react';
+class Counter extends Component {
+	render(){
+		return <h1> Hello World </h1>;
+	}
 }
 ```
 
-But this will fail because, we don't have the jsx on the MyApp.js file, so we NEED to import react on it:
-
+So now let's use this component on the index.js:
 ```js
-//MyApp.js
-import React from "react";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Counter from './components/counter';
 
-function MyApp() {
-  return (
-    <div>
-      <h1> Hello World! </h1>
-      <p> This is a paragraph </p>
-    </div>
-  );
+ReactDom.render(<Counter />,document.querySelector("#root"));
+```
+
+## More than one tag on the jsx.
+So let's create a button on the Counter component of our app, which will increment the counter. This will be something like:
+```js
+class Counter extends Component {
+	render(){
+		return <h1> Hello World </h1><button> Increment </button>;
+	}
 }
 ```
-
-The last thing to do is export the MyApp component to the world. So we do in ES6 modules style:
-
+This is not ok, because babel will not know what to do, it's expecting one parent html element, not two like this one. So the solution can be, let's wrap the counter element on a div, this is one element with two inside (Like a tree!). So the Counter element looks like:
 ```js
-//MyApp.js
-import React from "react";
-
-function MyApp() {
-  return (
-    <div>
-      <h1> Hello World! </h1>
-      <p> This is a paragraph </p>
-    </div>
-  );
-}
-export default MyApp;
-```
-
-Now let's import the component on our application:
-
-```js
-//index.js
-import React from "react";
-import ReactDOM from "react-dom";
-
-import MyInfo from "./MyInfo";
-
-ReactDOM.render(<MyApp />, document.querySelector("#root"));
-```
-
-Now we got our content back!
-
-A good practice is to have a folder called components, so we grab the MyApp.js module into it and we fix the import on the index.js file:
-
-```js
-//index.js
-import React from "react";
-import ReactDOM from "react-dom";
-
-import MyInfo from "./components/MyInfo";
-
-ReactDOM.render(<MyApp />, document.querySelector("#root"));
-```
-
-## Parent and Child Components
-
-So let's make a little bit more complex our application adding some hierarchy to the components.
-
-So we will start from scratch the application, first let's make a simple file of our html:
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-ReactDOM.render(<h1>Hello World! </h1>, document.querySelector("#root"));
-```
-
-So very simple for now right?, so now we can make a component that wraps up our entire application let's call it App, and we render it to the DOM:
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-ReactDOM.render(<App />, document.querySelector("#root"));
-```
-
-So let's create it:
-
-```js
-import React from "react";
-
-function App() {
-  return <h1> Hello again </h1>;
-}
-export default App;
-```
-
-So let's make it like an actual website, so we add a navbar with some elements on it:
-
-```js
-function App() {
-  return (
-    <div>
-      <nav>
-        <h1> Hello again </h1>
-        <ul>
-          <li>Thing 1</li>
-          <li>Thing 2</li>
-          <li>Thing 3</li>
-        </ul>
-      </nav>
-      <main>
-        <p> This is where most of my content will go ... </p>
-      </main>
-    </div>
-  );
+class Counter extends Component {
+	render(){
+		return <div><h1> Hello World </h1><button> Increment </button></div>;
+	}
 }
 ```
+Now we are cool with babel. Now to not write it on one line, we use parenthesis to do it on multiple lines, this looks much nicer (the formater will do it on every save), so the counter will look like:
+```js
+class Counter extends Component {
+	render(){
+		return( 
+			<div>
+			<h1> Hello World </h1>
+			<button> Increment </button>
+			</div>
+			);
+	}
+}
+```
+Which looks way nicer. But we don't want so many div's on our app. This div is going to do anything on our app. To not creating this, we will have to tell react 'Hey we have to html elements on this component', this is done by putting no a div, a react component instead. This component is called ** React.Fragment**:
+```js
+class Counter extends Component {
+	render(){
+		return( 
+			<React.Fragment>
+			<h1> Hello World </h1>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+}
+```
+Not we have the two elements on the real DOM.
+## Embedding Expressions
+Instead of hardcoding the things on our components, we want them to change in a dinamic way. To do this, we will have a special property which is the ** state ** propertie. This is an object which include any data that the component will need. On this case, a count because it's a counter.
+```js
+class Counter extends Component {
+	state = {
+		count: 0,
+	};
+	render(){
+		return( 
+			<React.Fragment>
+			<h1> Hello World </h1>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+}
+```
+Now to use it, we do it with on the render we use the curly braces:
+```js
+class Counter extends Component {
+	state = {
+		count: 0,
+	};
+	render(){
+		return( 
+			<React.Fragment>
+			<span> {this.state.count} </span>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+}
+```
+The curly braces allow us to add expressions on our component render html. For example we can put 2+2 and it will render 4, or we can call a method of the component and it will do something to it. 
 
-So this is getting a little complex, if we want to change something is going to be a mess (this can grow and grow and never stop growing).
-
-But we can make a tree of components, imagine this the App component have another component in it which is the navbar, and the main content. Now this content can have that paragraph on it and the navbar have the title and so for.
-
-So for example if we need a footer now, we can add it to the app component very easy. So let's create the footer one:
+For example let's add a format for the counter, which is a method on our component:
+```js
+class Counter extends Component {
+	state = {
+		count: 0,
+	};
+	render(){
+		return( 
+			<React.Fragment>
+			<span> {this.formatCount()} </span>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+	formatCount(){
+		const { count } = this.state;
+		return count === 0 ? "Zero" : count;
+	}
+}
+```
+Notice the pattern matching on the count constant. Also we are allowed to return jsx expressions to it, so it's pretty normal to do so if you want. This means that jsx is almost equall to a js value.
+## Attributes on the components
+So we want to set some attributes with some components state variables. It's strayforward from the last section:
 
 ```js
-//Footer.js
-
-import React from "react";
-function Footer() {
-  return (
-    <footer>
-      <h3> This is an awesome footer </h3>
-    </footer>
-  );
+class Counter extends Component {
+	state = {
+		count: 0,
+		imageUrl: "https://picsum.photos/200",
+	};
+	render(){
+		return( 
+			<React.Fragment>
+			<img src={this.state.imageUrl} alt="" />
+			<span> {this.formatCount()} </span>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+	formatCount(){
+		const { count } = this.state;
+		return count === 0 ? "Zero" : count;
+	}
 }
-export default Footer;
 ```
-
-So now let's added it to the application:
-
+Now we want to apply a css class to our component, to do it we don't type 'class' to the attribute, it's a keyword on JavaScript so instead we do it by putting className:
 ```js
-import Footer from "./Footer";
-function App() {
-  return (
-    <div>
-      <nav>
-        <h1> Hello again </h1>
-        <ul>
-          <li>Thing 1</li>
-          <li>Thing 2</li>
-          <li>Thing 3</li>
-        </ul>
-      </nav>
-      <main>
-        <p> This is where most of my content will go ... </p>
-      </main>
-      <Footer />
-    </div>
-  );
+class Counter extends Component {
+	state = {
+		count: 0,
+	};
+	render(){
+		return( 
+			<React.Fragment>
+			<span className= "badge badge-primary m-2"> {this.formatCount()} </span>
+			<button> Increment </button>
+			</React.Fragment>
+			);
+	}
+	formatCount(){
+		const { count } = this.state;
+		return count === 0 ? "Zero" : count;
+	}
 }
 ```
-
-So we can refactor all this App content to just components. So we can nest component as much as we need.
-
-## Syling Components with CSS classes
-
-So to start this we will create a new simple application with a header, a main content and the footer. So we have this three files on it:
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
-
-function App() {
-  return (
-    <div>
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
-```
-
-Then that components are:
-
-```js
-//Header.js
-function Header() {
-  return <header>This is a header </header>;
-}
-export default Header;
-```
-
-```js
-//MainContent.js
-function MainContent() {
-  return <main> This is the main content </main>;
-}
-```
-
-```js
-//Footer
-function Footer() {
-  return <footer> This is the footer </footer>;
-}
-```
-
-So now let's add some styling to the component, on html we do this by the attribute of the tag called class, but we are not writing a html file anymore, this is a JavaScript file. So the class keyword is a language reserved one to create classes and prototype objects to them. So how we added it? Instead JSX use 'className':
-
-```js
-function Header() {
-  return <header className="navbar"> This is a header </header>;
-}
-export default Header;
-```
-
-Now on the style.css we can add some styling to the classes:
-
-```css
-body {
-  margin: 0;
-}
-
-.navbar {
-  height: 100px;
-  background-color: #333;
-  color: whitesmoke;
-  margin-bottom: 15px;
-  text-align: center;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-```
-
-You can only applied to them is to JSX elements, is not components. Like regular HTML.
-
-## JSX to JavaScript and Back
-
-So let's understand how JSX and JavaScript make together. First of all let's create a new app component with a hello world inside:
-
-```js
-function App() {
-  return <h1> Hello World! </h1>;
-}
-```
-
-So now what if we want to do it with some variables, like taking a name and saying hello to that name:
-
-```js
-function App() {
-  const firstName = "Bob";
-  const lastName = "Ziroll";
-  return <h1> Hello firstName + " " + lastName! </h1>;
-}
-```
-
-This isn't gonna work. So what are we going to do now to make the JavaScript render as used to be. This is done by putting on our JSX some curly braces, like this:
-
-```js
-const App = () => {
-  const firstName = "Bob";
-  const lastName = "Ziroll";
-  return <h1> Hello {`${firstName} ${lastName}`}! </h1>;
-};
-```
-
-Notice that here we do it using ES6 arrow function, but this can be done on the usual way with named functions instead.
-
-Now for example, let's create a hello in the morning and goodnight on the night:
-
-```js
-function App() {
-  const date = new Date();
-  return <h1> It is currently about {date.getHours() % 12} o'clock! </h1>;
-}
-```
-
-Now the component promised:
-
-```js
-function App() {
-  const date = new Date();
-  const hours = date.getHours();
-  let timeOfDay;
-  if (hours < 12) {
-    timeOfDay = "morning";
-  } else if (hours >= 12 && hours < 17) {
-    timeOfDay = "afternoon";
-  } else {
-    timeOfDay = "night";
-  }
-  return <h1> Good {timeOfDay}! </h1>;
-}
-```
-
-## Inline Styling with JSX
-
-So the style propertie of a HTML element is no valid on the JSX ones. It expects to be a JavaScript object, so if our html look like this:
-```html
-<h1 style="color : '#FF8C00'"> Hello World! </h1>
-```
-In our component, we use should use it like this:
-```js
-function App(){
-  return (
-    <h1 style={color: "#FF8C00"}> Hello World! </h1>
-  )
-}
-```
-But this doesn't work, because we write JavaScript on the JSX with curly braces, so to write the style we use now double curly braces:
-```js
-function App(){
-  return (
-    <h1 style={{color: "#FF8C00"}}> Hello World! </h1>
-  )
-}
-```
-To add additional styles, we add another propertie to that object, except with the '-' in the CSS ones, we replaces with the camelcase of the word. For example background-color will be now backgroundColor.
-## Props in React
-### What are Props
-So let's take a first look to an html file:
-```html
-<html>
-  <head></head>
-  <body>
-    <a> This is a link </a>
-    <input />
-    <img />
-  </body>
-</html>
-```
-So now what is wrong with this html? The thing is that they doesn't have their properties. So let's add them for example:
-```html
-<html>
-  <head></head>
-  <body>
-    <a href="google.com"> This is a link </a>
-    <input placeholder="First Name" name="" type="" />
-    <img src="" />
-  </body>
-</html>
-```
-Notice that this properties modify how the tags acts and behaves on the rendering of our webpage, so this is what a prop do, we can add them to a component like a html propertie and will modify the rendering of that component on our webpage, which means is more reusable on the page!.
-
-So how to make ...
