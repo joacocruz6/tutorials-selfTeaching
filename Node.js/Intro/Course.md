@@ -213,3 +213,39 @@ fs.readdir('./',(err,files) => {
 });
 ```
 ## Events in Node
+So node is usually used on the backend, and it has an API to handle events, which is something that is change or a notification to handle certain processes. For example, handle a raw http request on it. So first let load te event module:
+```js
+const EventEmitter = require('events'); // Class of the event emitter
+```
+We have the class methods on the emitter. So let's create a instance of the class ( an object).
+```js
+const emitter = new EventEmitter();
+```
+This is a emitter of events. Most of the times we use two methods:
+* emit(<name of the event>) : Produce a new event 
+* on or addListener(<name of the event>,<function to use when event raise>{callback}): Handler of the event.
+
+The event has listener that 'listens' to the event when produce, now let's use it:
+```js
+emitter.on('Message log',()=> console.log('Listener Called'));
+emitter.emit('Message log');
+```
+
+The registration of the events order it matters, if we add a listener afterwards, when emmiting the event, nothing would have happened.
+
+### Event arguments
+Now when an event is launched, we can pass some arguments to it, for example when making a connection we can pass the id of the connection and the url:
+```js
+emitter.emit('Connect',1,'https://example.ex');
+```
+But this is some magic making it, a better practice is to pass one object as the arguments, which will be called event argument object:
+```js
+emitter.emit('Connect',{id: 1, url: 'https://example.ex'});
+```
+Now on the call back we can receive the argument of the event as a argument of the function:
+```js
+emitter.on('Connect',(arg) =>{ //Some people call it e sometimes
+     console.log(`Connection with id ${arg.id} and to the url: ${arg.url}`)
+});  
+```
+## Extending the EventEmitter class
