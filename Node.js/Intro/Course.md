@@ -132,5 +132,84 @@ If we do now:
 let logger = require('./logger');
 console.log(logger);
 ```
-And we run it, it will show us that the logger variable is a JavaScript Object.
+And we run it, it will show us that the logger variable is a JavaScript Object. This object have a method called log, and nothing more. Let's call that function on our app:
+```js
+let logger = require('./logger');
+logger.log('My message');
+```
+Now the best practice is that we define the import as a constant in order to not change the value. So the app will be now:
+```js
+const logger = require('./logger');
+logger.log('My message');
+```
 
+One last thing we can export one thing, for example we have only one log function, so let's export that instead of the object:
+```js
+module.export = log;
+```
+Now we call it on the app:
+```js
+const logger = require('./logger');
+logger('My message');
+```
+
+## The module wrapper function
+So underhood what does node use to make the imports and exports?, so let's make a syntax error on the first line of our module:
+```js
+var x =;
+```
+So let's execute it with node, it will tell us what we already know but with saying that the error is produced in: 
+```js
+(function (exports,require,module,__filename,__dirname){var x=; //...
+})
+```
+What is this?, this is the function that make run our code when exporting it and importing it, so know we know this function as the module wrapper function of a JavaScript file in node. Notice that instead of writing:
+```js
+module.exports.log = log;
+```
+We can do it by:
+```js
+exports.log = log;
+```
+Because the function receive the exports parameter, but we can't redifined it will be a error. We also have __filename and __dirname that is the complete file path and it's file name and the other one is just the directory respectively
+
+## Path module
+So there is a module very usefull for pathing, which is the path module. So let's create a file called app.js and use the module. Let's call the import path:
+```js
+const path = require('path'); // Built-in module, not use . or .. on the initial thing
+```
+So let's call and plug on the console the current path of our applycation:
+```js
+let x = path.parse(__filename);
+console.log(x);
+```
+We will see an object, that is better to work with that instead of the full path to that item. 
+
+## OS module
+So let's use now the os module of node:
+```js
+const os = require('os');
+```
+Let's see the free and total memory of our machine:`
+```js
+let free = os.freemem();
+let total = os.totalmem();
+console.log({f: free,t:total});
+```
+
+## File System Module
+Let's play with the file system module on node. Let's add it:
+```js
+const fs = require('fs');
+```
+This has asynchronous and synchronous method, but we will often use the asynchronous ones. Node work in a single thread, because of that the server have one thread to serve the clients, so need to have a callback function to execute when it's ready. So all the asynchronous methods have a function as the last argument to execute afterwards. The callback always receive an error and a result of the succesfull operation. For example let's scan our files on the current directory:
+```js
+const fs = require('fs');
+const file = fs.readdirSyn('./');
+console.log(files);
+fs.readdir('./',(err,files) => {
+     if(err) console.log('Error',err);
+     else console.log(files);
+});
+```
+## Events in Node

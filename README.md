@@ -67,3 +67,5 @@ There are also some great channels that give us free content for learning by our
 I also recommend some companies to learn but we have to pay to them to use theirs tutorials. I personally when got the time and money to do it will try them, but some of the courses are free!:
   - [Platzi](https://platzi.com/): Platzi is great, all the content is very well explained. They have a really good youtube channel to keep you informed [Platzi Youtube](https://www.youtube.com/channel/UC55-mxUj5Nj3niXFReG44OQ)
   - [Udemy](https://www.udemy.com/): Udemy is very large, I think is the biggest place to get some course. The downside is that they have no free courses.
+
+Finally, this repository will receive constant updates or very large ones, because I want to learn a lot and do it constantly to make me better at programming. If someone check a typo or a mislead of a concept, a pull request will be greatly accepted :).
