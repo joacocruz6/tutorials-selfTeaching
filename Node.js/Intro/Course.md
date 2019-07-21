@@ -1,6 +1,6 @@
 # Node.js Course
 Video: https://www.youtube.com/watch?v=TlB_eWDSMt4
-I'm on the minute: 27:26
+I'm on the minute: 1:02:51
 ## Introduction
 Node.js is a runtime environment for executing JavaScript Code. It's not a framework and not a language, is an enviroment to take out JavaScript of the browser and executing it on the machine. It's open source and that is so cool!. We can just run JavaScript on the backend if we want or build an API for JavaScript, and so on... We now have the power of JavaScript on our machine. So using node has many advantages, but mainly we allow us to not change our JavaScript between front end and back end.
 ## The Node.js Architecture
