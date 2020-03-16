@@ -121,3 +121,7 @@ Let's commit it right away:
 git add . 
 git commit -m "feat(index): Add new paragraph"
 ```
+
+## Part 5: Let's merge the new feature
+## Part 6: Oh no, someone add something to development (Rebasing)
+## Part 7: Merge the new feature via Pull Request
