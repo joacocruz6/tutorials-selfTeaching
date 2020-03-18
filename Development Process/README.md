@@ -123,5 +123,38 @@ git commit -m "feat(index): Add new paragraph"
 ```
 
 ## Part 5: Let's merge the new feature
-## Part 6: Oh no, someone add something to development (Rebasing)
-## Part 7: Merge the new feature via Pull Request
+So we want to merge the new feature, because it has to go to production (remember that production is the same as the master branch). So first we need to merge it to the development branch and then that to the production branch. So there is a bunch of different ways to do this. Here is how is not supposed to do it:
+
+First we need to pull all the recent changes on the development branch:
+```bash
+git checkout development
+git pull
+```
+
+Then we need to update our branch:
+```bash
+git checkout feature/new_paragraph_index
+git merge development
+```
+
+Then we change to the development branch, merge the feature branch and push it to the remote development.
+```bash
+git checkout development
+git merge feature/new_paragraph_index
+git push
+```
+
+This method is ok, but there is three main problems with it. This are:
+1. Changes could have been made on development on the process
+2. You added all your commits to the development branch, but if something break then to revert those changes will be a pain (Because you revert with the git command and not by hand).
+3. Are you sure that your code is clean and everyone can read it?
+
+So let's approach the second issue. If you want the changes made on a commit, you can use git in order to do it:
+```bash
+git revert <commit_id>
+```
+This will create a commit that says that a previous commit has been revert thus reverting those changes.
+
+Now the first and third issues are a different story.
+## Part 6: Merge via a Pull Request
+## Part 7: Oh no, someone add something to development (Rebasing)
